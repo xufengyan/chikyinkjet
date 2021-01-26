@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zk.chinkjet.dao.FileDao">
+    <resultMap type="com.zk.chinkjet.entity.UploadFile" id="zkfile">
+        <id property="zId" column="z_id"/>
+        <result property="fileName" column="file_name"/>
+        <result property="filePath" column="file_path"/>
+        <result property="mapFilePath" column="map_file_path"/>
+<!--        <result property="mType" column="mType"/>-->
+        <result property="createTime" column="create_time"/>
+<!--        <association property="address" column="addid" select="com.qbd.mapper.AddressMappers.findbyid">-->
+<!--        </association>-->
+<!--        <association property="grade" column="gid" select="com.qbd.mapper.GradeMappers.findbyid">-->
+<!--        </association>-->
+    </resultMap>
+
+<!--    <select id="selectZkFileList" resultType="com.zk.chinkmap.entity.ZkFile" parameterType="string">-->
+<!--        select t.*  from zk_file t where t.ip=#{ip}-->
+<!--    </select>-->
+
+<!--    <select id="selectZkFileById" resultType="com.zk.chinkmap.entity.ZkFile" parameterType="string">-->
+<!--         select t.*  from zk_file t where t.zid=#{zid}-->
+<!--    </select>-->
+
+<!--    <select id="selectZkFileBy" resultType="com.zk.chinkmap.entity.ZkFile" parameterType="string">-->
+<!--        select t.* from zk_file t where t.ip=#{ip} and t.OriginalName = #{OriginalName}-->
+<!--    </select>-->
+
+    <insert id="insertFile" parameterType="com.zk.chinkjet.entity.UploadFile">
+        insert into
+        zk_file(z_id,file_name,file_path,map_file_path,create_time)
+        values (#{zId},#{fileName},#{filePath},#{mapFilePath},#{createTime})
+    </insert>
+
+<!--    <delete id="deleteZkFileByTime" parameterType="com.zk.chinkmap.entity.ZkFile">-->
+<!--        delete zk_file where create_time <![CDATA[<]]> #{createTime}-->
+<!--    </delete>-->
+</mapper>

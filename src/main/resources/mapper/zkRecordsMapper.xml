@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zk.chinkjet.dao.RecordsDao">
+
+    <resultMap type="com.zk.chinkjet.entity.Records" id="zkRecordsResult">
+        <id property="zId" column="z_id"/>
+        <result property="zId" column="z_id"/>
+        <result property="rName" column="r_name"/>
+        <result property="rUserId" column="r_user_id"/>
+        <result property="createTime" column="create_time"/>
+<!--        <association property="address" column="addid" select="com.qbd.mapper.AddressMappers.findbyid">-->
+<!--        </association>-->
+<!--        <association property="grade" column="gid" select="com.qbd.mapper.GradeMappers.findbyid">-->
+<!--        </association>-->
+        <collection property="jetCounters" ofType="com.zk.chinkjet.entity.JetCounter" >
+            <result property="zId"    column="t_id"    />
+            <result property="rId"    column="r_id"    />
+            <result property="textVal"    column="text_val"    />
+            <result property="x"    column="x"    />
+            <result property="y"    column="y"    />
+            <result property="rotate"    column="rotate"    />
+            <result property="scale"    column="scale"    />
+            <result property="fontSize"    column="font_size"    />
+            <result property="letterSpacing"    column="letter_spacing"    />
+            <result property="fontWeight"    column="font_weight"    />
+            <result property="fontStyle"    column="font_style"    />
+            <result property="dragType"    column="drag_type"    />
+            <result property="mode"    column="mode"    />
+            <result property="dateFormat"    column="date_format"    />
+            <result property="originalDate"    column="original_date"    />
+            <result property="imageSrc"    column="image_src"    />
+            <result property="originWidth"    column="origin_width"    />
+            <result property="originHeight"    column="image_height"    />
+            <result property="postpone" column="postpone"/>
+            <result property="postponeVal" column="postpone_val"/>
+            <result property="excelArr" column="excel_arr"/>
+            <association property="setCounterNum" javaType="com.zk.chinkjet.entity.CounterNum" resultMap="ZkCounterNumResult">
+                <id property="zId"    column="c_id"    />
+            </association>
+            <association property="setQRCode" javaType="com.zk.chinkjet.entity.QRCode" resultMap="QRCodeResult">
+                <id property="zId"    column="q_id"    />
+            </association>
+            <association property="imgStyle" javaType="com.zk.chinkjet.entity.Image" resultMap="ZkImageResult">
+                <id property="zId"    column="i_id"    />
+            </association>
+<!--            <result property="zId"    column="t_id"    />-->
+        </collection>
+
+    </resultMap>
+
+
+    <resultMap type="com.zk.chinkjet.entity.CounterNum" id="ZkCounterNumResult">
+        <result property="zId"    column="c_id"    />
+<!--        <result property="jetcountId"    column="jetCount_id"    />-->
+<!--        <result property="textVal"    column="text_val"    />-->
+<!--        <result property="x"    column="x"    />-->
+<!--        <result property="y"    column="y"    />-->
+<!--        <result property="rotate"    column="rotate"    />-->
+<!--        <result property="scale"    column="scale"    />-->
+<!--        <result property="fontSize"    column="font_size"    />-->
+<!--        <result property="letterSpacing"    column="letter_spacing"    />-->
+<!--        <result property="fontWeight"    column="font_weight"    />-->
+<!--        <result property="fontStyle"    column="font_style"    />-->
+<!--        <result property="dragType"    column="drag_type"    />-->
+        <result property="system"    column="system"    />
+        <result property="width"    column="width"    />
+        <result property="initVal"    column="init_val"    />
+        <result property="progress"    column="progress"    />
+        <result property="minVal"
+                column="min_val"    />
+        <result property="maxVal"    column="max_val"    />
+        <result property="repetition"    column="repetition"    />
+        <result property="highOrder"    column="high_order"    />
+    </resultMap>
+    <resultMap type="com.zk.chinkjet.entity.Image" id="ZkImageResult">
+        <result property="zId"    column="i_id"    />
+<!--        <result property="x"    column="x"    />-->
+<!--        <result property="y"    column="y"    />-->
+<!--        <result property="imgSrc"    column="img_src"    />-->
+        <result property="width"    column="imgWidth    "    />
+        <result property="height"    column="height"    />
+        <result property="fileId"    column="file_id"    />
+<!--        <result property="jetcounterId"    column="jetCounter_id"    />-->
+    </resultMap>
+    <resultMap type="com.zk.chinkjet.entity.QRCode" id="QRCodeResult">
+        <result property="zId"    column="q_id"    />
+        <result property="QCText"    column="QC_text"    />
+        <result property="QRCodeType"    column="QRCode_type"    />
+        <result property="QCTextType"    column="QC_text_type"    />
+        <result property="QCWidth"    column="QC_width"    />
+        <result property="QCHeight"    column="QC_height"    />
+        <result property="setVariableQRCode" column="set_variableQRCode" />
+<!--        <result property="jetcounterId"    column="jetCounter_id"    />-->
+<!--        <result property="imagesrc"    column="imageSrc"    />-->
+<!--        <result property="x"    column="x"    />-->
+<!--        <result property="y"    column="y"    />-->
+<!--        <result property="dragType"    column="drag_type"    />-->
+        <result property="fileId"    column="file_id"    />
+    </resultMap>
+    <select id="selectRecordsList" resultMap="zkRecordsResult" parameterType="com.zk.chinkjet.entity.Records">
+--         文本和时间,表格
+        select r.z_id,t.z_id t_id,r.r_name,r.create_time,t.text_val,t.x,t.y,t.rotate,t.scale,t.font_size,t.letter_spacing,
+        t.font_weight,t.font_style,t.drag_type,t.mode,t.date_format,t.original_date,t.postpone,t.postpone_val,t.excel_arr
+--         计数器
+        ,null system,null width,null init_val,null progress ,null min_val,null max_val,null repetition,null high_order
+--         图片
+        ,null image_src,null imgWidth, null height, null file_id, null origin_width,null origin_height
+--         二维码
+        ,null QC_text,null QRCode_type,null QC_text_type,null QC_width,null QC_height, null set_variableQRCode
+        from zk_records r left join zk_text t on r.z_id = t.r_id
+        where r.r_user_id = #{rUserId}
+        union
+        select r.z_id,c.z_id t_id,r.r_name,r.create_time,c.text_val,c.x,c.y,c.rotate,c.scale,c.font_size,c.letter_spacing,
+        c.font_weight,c.font_style,c.drag_type,null mode,null date_format,null original_date ,null postpone,null postpone_val, null excecl_arr
+--         计数器
+        ,c.system, c.width, c.init_val, c.progress , c.min_val, c.max_val, c.repetition, c.high_order
+--         图片
+        ,null image_src,null imgWidth, null height, null file_id, null origin_width,null origin_height
+--         二维码
+        ,null QC_text,null QRCode_type,null QC_text_type,null QC_width,null QC_height, null set_variableQRCode
+        from zk_records r left join zk_counter_num c on r.z_id = c.r_id
+        where r.r_user_id = #{rUserId}
+        union
+        select r.z_id,i.z_id t_id,r.r_name,r.create_time,null text_val,i.x,i.y,null rotate ,null scale,null font_size ,null letter_spacing,
+        null font_weight,null font_style,'image' drag_type,null mode,null date_format,null original_date ,null postpone,null postpone_val, null excecl_arr
+--         计数器
+        ,null system,null width,null init_val,null progress ,null min_val,null max_val,null repetition,null high_order
+--         图片
+        ,i.image_src,i.width imgWidth,i.height, i.file_id,i.origin_width,i.origin_height
+--         二维码
+        ,null QC_text,null QRCode_type,null QC_text_type,null QC_width,null QC_height, null set_variableQRCode
+        from zk_records r left join zk_image i on r.z_id = i.r_id
+         where r.r_user_id = #{rUserId}
+        union
+
+        select r.z_id,q.z_id t_id,r.r_name,r.create_time,null text_val,q.x,q.y,null rotate ,null scale,null font_size ,null letter_spacing,
+        null font_weight,null font_style,q.drag_type,null mode,null date_format,null original_date ,null postpone,null postpone_val, null excecl_arr
+--         计数器
+        ,null system,null width,null init_val,null progress ,null min_val,null max_val,null repetition,null high_order
+--         图片
+        ,q.image_src,null imgWidth,null height, q.file_id,null origin_width,null origin_height
+--         二维码
+        ,q.QC_text,q.QRCode_type,q.QC_text_type,q.QC_width,q.QC_height,q.set_variableQRCode
+        from zk_records r left join zk_qrcode q on r.z_id = q.r_id
+        where r.r_user_id = #{rUserId}
+
+    </select>
+
+<!--    添加 父子表添加方式-->
+    <insert id="insertRecords" parameterType="com.zk.chinkjet.entity.Records">
+            insert into zk_records(z_id,r_name,r_user_id,create_time)
+            values (#{zId},#{rName},#{rUserId},#{createTime});
+            <if test="jetCounters!=null and jetCounters.size>0">
+                <foreach collection="jetCounters" item="item" index="index">
+                    <if test="item.dragType == 'text' or item.dragType == 'date' or  item.dragType == 'excel'">
+                        insert into zk_text(z_id,r_id,text_val,x,y,rotate,scale,font_size,letter_spacing,font_weight,font_style,drag_type,mode,date_format,original_date,postpone,postpone_val,excel_arr)
+                        values (#{item.zId},#{item.rId},#{item.textVal},#{item.x},#{item.y},#{item.rotate},#{item.scale},#{item.fontSize},#{item.letterSpacing},#{item.fontWeight},#{item.fontStyle},#{item.dragType},#{item.mode},#{item.dateFormat},#{item.originalDate},#{item.postpone},#{item.postponeVal},#{item.excelArr});
+                    </if>
+                    <if test="item.dragType == 'counterNum'">
+                        insert into
+                        zk_counter_num(z_id,
+                        r_id,
+                        text_val,
+                        x,
+                        y,
+                        rotate,
+                        scale,
+                        font_size,
+                        letter_spacing,
+                        font_weight,
+                        font_style,
+                        drag_type,
+                        system,
+                        width,
+                        init_val,
+                        progress,
+                        min_val,
+                        max_val,
+                        repetition,
+                        high_order
+                        )
+                        values (#{item.zId},#{item.rId},#{item.textVal},#{item.x},#{item.y},#{item.rotate},#{item.scale},
+                        #{item.fontSize},#{item.letterSpacing},#{item.fontWeight},#{item.fontStyle},#{item.dragType}
+                        ,#{item.setCounterNum.system},#{item.setCounterNum.width},#{item.setCounterNum.initVal},
+                        #{item.setCounterNum.progress},#{item.setCounterNum.minVal},#{item.setCounterNum.maxVal}
+                        ,#{item.setCounterNum.repetition},#{item.setCounterNum.highOrder});
+                    </if>
+                    <if test="item.dragType == 'image'">
+                        insert into
+                        zk_image(
+                        z_id,
+                        r_id,
+                        x,
+                        y,
+                        image_src,
+                        width,
+                        height,
+                        file_id,
+                        origin_width,
+                        origin_height)
+                        values (#{item.zId},#{item.rId},#{item.x},#{item.y},#{item.imageSrc},#{item.imgStyle.width},#{item.imgStyle.height},#{item.imgStyle.fileId},#{item.originWidth},#{item.originHtight});
+                    </if>
+                    <if test="item.dragType == 'QRCode' or item.dragType == 'VariableQRCode'">
+                        insert into
+                        zk_qrcode(z_id,
+                        r_id,
+                        x,
+                        y,
+                        drag_type,
+                        image_src,
+                        QC_text,
+                        QRCode_type,
+                        QC_text_type,
+                        QC_width,
+                        QC_height,
+                        file_id,
+                        set_variableQRCode)
+                        values (#{item.zId},#{item.rId},#{item.x},#{item.y},#{item.dragType},#{item.imageSrc},
+                        #{item.setQRCode.QCText},#{item.setQRCode.QRCodeType},#{item.setQRCode.QCTextType},#{item.setQRCode.QCWidth}
+                        ,#{item.setQRCode.QCHeight},#{item.setQRCode.fileId},#{item.setQRCode.setVariableQRCode});
+                    </if>
+                </foreach>
+
+            </if>
+    </insert>
+
+    <update id="updataRecords" parameterType="com.zk.chinkjet.entity.Records">
+       update zk_records
+       <trim prefix="SET" suffixOverrides=",">
+           <if test="rName != null and rName != ''">r_name = #{rName},</if>
+       </trim>
+       where
+       z_id = #{zId} and r_user_id = #{rUserId}
+        <if test="jetCounters!=null and jetCounters.size>0">
+            <foreach collection="jetCounters" item="item" index="index" open=";" separator=";">
+                <if test="item.dragType == 'text' or item.dragType == 'date' or item.dragType == 'date'">
+                    update zk_text
+                    <trim prefix="SET" suffixOverrides=",">
+                        <if test="item.textVal != null and item.textVal != ''">text_val = #{item.textVal},</if>
+                        <if test="item.x != null ">x = #{item.x},</if>
+                        <if test="item.y != null ">y = #{item.y},</if>
+                        <if test="item.rotate != null ">rotate = #{item.rotate},</if>
+                        <if test="item.scale != null ">scale = #{item.scale},</if>
+                        <if test="item.fontSize != null ">font_size = #{item.fontSize},</if>
+                        <if test="item.letterSpacing != null ">letter_spacing = #{item.letterSpacing},</if>
+                        <if test="item.fontWeight != null ">font_weight = #{item.fontWeight},</if>
+                        <if test="item.fontStyle != null ">font_style = #{item.fontStyle},</if>
+                        <if test="item.dragType != null  and item.dragType != ''">drag_type = #{item.dragType},</if>
+                        <if test="item.mode != null  and item.mode != ''">mode = #{item.mode},</if>
+                        <if test="item.dateFormat != null ">date_format = #{item.dateFormat},</if>
+                        <if test="item.originalDate != null">original_date=#{item.originalDate},</if>
+                        <if test="item.postpone != null and item.postpone != ''">postpone=#{item.postpone},</if>
+                        <if test="item.postponeVal != null and item.postponeVal != ''">postpone_val=#{item.postponeVal},</if>
+                        <if test="item.excelArr != null">excel_arr=#{item.excelArr},</if>
+
+                    </trim>
+                    where z_id = #{item.zId} and r_id = #{zId}
+                </if>
+                <if test="item.dragType == 'counterNum'">
+                    update zk_counter_num
+                    <trim prefix="SET" suffixOverrides=",">
+                        <!--                         <if test="rId != null  and rId != ''">r_id = #{zId},</if> -->
+                        <if test="item.textVal != null  and item.textVal != ''">text_val = #{item.textVal},</if>
+                        <if test="item.x != null ">x = #{item.x},</if>
+                        <if test="item.y != null ">y = #{item.y},</if>
+                        <if test="item.rotate != null ">rotate = #{item.rotate},</if>
+                        <if test="item.scale != null ">scale = #{item.scale},</if>
+                        <if test="item.fontSize != null ">font_size = #{item.fontSize},</if>
+                        <if test="item.letterSpacing != null ">letter_spacing = #{item.letterSpacing},</if>
+                        <if test="item.fontWeight != null ">font_weight = #{item.fontWeight},</if>
+                        <if test="item.fontStyle != null ">font_style = #{item.fontStyle},</if>
+                        <if test="item.dragType != null  and item.dragType != ''">drag_type = #{item.dragType},</if>
+                        <if test="item.setCounterNum.system != null ">system = #{item.setCounterNum.system},</if>
+                        <if test="item.setCounterNum.width != null ">width = #{item.setCounterNum.width},</if>
+                        <if test="item.setCounterNum.initVal != null ">init_val = #{item.setCounterNum.initVal},</if>
+                        <if test="item.setCounterNum.progress != null ">progress = #{item.setCounterNum.progress},</if>
+                        <if test="item.setCounterNum.minVal != null ">min_val = #{item.setCounterNum.minVal},</if>
+                        <if test="item.setCounterNum.maxVal != null ">max_val = #{item.setCounterNum.maxVal},</if>
+                        <if test="item.setCounterNum.repetition != null ">repetition = #{item.setCounterNum.repetition},</if>
+                        <if test="item.setCounterNum.highOrder != null ">high_order = #{item.setCounterNum.highOrder},</if>
+                    </trim>
+                    where z_id = #{item.zId} and r_id = #{zId}
+                </if>
+                <if test="item.dragType == 'image'">
+                    update zk_image
+                    <trim prefix="SET" suffixOverrides=",">
+                        <if test="item.x != null ">x = #{item.x},</if>
+                        <if test="item.y != null ">y = #{item.y},</if>
+                        <if test="item.imgSrc != null  and item.imgSrc != ''">img_src = #{item.imgSrc},</if>
+                        <if test="item.imgStyle.width != null and item.imgStyle.width != ''">width = #{item.imgStyle.width},</if>
+                        <if test="item.imgStyle.height != null and item.imgStyle.height != ''">height = #{item.imgStyle.height},</if>
+                        <if test="item.originWidth != null  and item.originWidth != ''">origin_width = #{item.originWidth},</if>
+                        <if test="item.originHeight != null  and item.originHeight != ''">origin_height = #{item.originHeight},</if>
+                        <if test="item.imgStyle.fileId != null  and item.imgStyle.fileId != ''">file_id = #{item.imgStyle.fileId},</if>
+                        <!--                        <if test="rId != null  and rId != ''">r_id = #{rId},</if>-->
+                    </trim>
+                    where z_id = #{item.zId} and r_id = #{zId}
+                </if>
+                <if test="item.dragType == 'QRCode' or item.dragType == 'VariableQRCode'">
+                    update zk_qrcode
+                    <trim prefix="SET" suffixOverrides=",">
+                        <if test="item.setQRCode.QCText != null  and item.setQRCode.QCText != ''">QC_text = #{item.setQRCode.QCText},</if>
+                        <if test="item.setQRCode.QRCodeType != null  and item.setQRCode.QRCodeType != ''">QRCode_type = #{item.setQRCode.QRCodeType},</if>
+                        <if test="item.setQRCode.QCTextType != null ">QC_text_type = #{item.setQRCode.QCTextType},</if>
+                        <if test="item.setQRCode.QCWidth != null ">QC_width = #{item.setQRCode.QCWidth},</if>
+                        <if test="item.setQRCode.QCHeight != null ">QC_height = #{item.setQRCode.QCHeight},</if>
+                        <if test="item.imageSrc != null  and item.imageSrc != ''">image_src = #{item.imageSrc},</if>
+                        <if test="item.x != null ">x = #{item.x},</if>
+                        <if test="item.y != null ">y = #{item.y},</if>
+                        <if test="item.dragType != null  and item.dragType != ''">drag_type = #{item.dragType},</if>
+                        <if test="item.setQRCode.fileId != null  and item.setQRCode.fileId != ''">file_id = #{item.setQRCode.fileId},</if>
+                        <if test="item.setQRCode.setVariableQRCode != null  and item.setQRCode.setVariableQRCode != ''">set_variableQRCode = #{item.setQRCode.setVariableQRCode},</if>
+
+                    </trim>
+                    where z_id = #{item.zId} and r_id = #{zId}
+                </if>
+            </foreach>
+        </if>
+
+
+    </update>
+    <delete id="delRecords">
+        delete zk_records where z_id = #{rId} ;
+        delete zk_text where r_id = #{rId} ;
+        delete zk_counter_num where r_id = #{rId} ;
+        delete zk_image where r_id = #{rId} ;
+        delete zk_qrcode where r_id = #{rId} ;
+    </delete>
+<!--    <select id="selectZkFileById" resultType="com.zk.chinkmap.entity.ZkFile" parameterType="string">-->
+<!--         select t.*  from zk_file t where t.zid=#{zid}-->
+<!--    </select>-->
+
+<!--    <select id="selectZkFileBy" resultType="com.zk.chinkmap.entity.ZkFile" parameterType="string">-->
+<!--        select t.* from zk_file t where t.ip=#{ip} and t.OriginalName = #{OriginalName}-->
+<!--    </select>-->
+
+<!--    <insert id="insertFile" parameterType="com.zk.chinkjet.entity.UploadFile">-->
+<!--        insert into-->
+<!--        zk_file(z_id,file_name,file_path,map_file_path,create_time)-->
+<!--        values (#{zid},#{fileName},#{filePath},#{mapFilePath},#{createTime})-->
+<!--    </insert>-->
+
+<!--    <delete id="deleteZkFileByTime" parameterType="com.zk.chinkmap.entity.ZkFile">-->
+<!--        delete zk_file where create_time <![CDATA[<]]> #{createTime}-->
+<!--    </delete>-->
+</mapper>

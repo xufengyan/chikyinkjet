@@ -1,0 +1,30 @@
+
+#配置端口
+  server:
+    port: 8082
+  spring:
+    application:
+    #配置服务名称
+    name: zk-chikyjet
+    datasource:
+        #服务器数据库地址?&allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&serverTimezone=GMT%2B8
+#        url: jdbc:mysql://localhost:3306/zkchikymap?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+        url: jdbc:mysql://localhost:3306/zkjet2?&allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&serverTimezone=GMT%2B8
+        username: root
+        password: root
+        #服务器数据库密码
+        #      password: roger-neil
+#        password: chikytech2018cavin
+  mybatis:
+      mapper-locations: classpath:mapper/*Mapper.xml
+      configuration:
+          map-underscore-to-camel-case: true
+  com:
+    zk:
+      chikyjet:
+          sourcePath: file:/D:/home/image/
+    #          sourcePath: file:/zkfile/home/fileNmea/
+          targetPath: /monchrome/**
+          basePath: D:\\home/image/
+          servicePath: http://192.168.0.131:8082
+#          servicePath: http://www.chiky.cn

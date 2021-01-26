@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/drag/css/main.css">
+    <style>
+        body{
+            margin: 0px !important;
+        }
+    </style>
+</head>
+<body style="height: 150px">
+<!--
+    <div class="container has-text-centered">
+        <div class="columns has-text-centered is-desktop has-margin-top">
+            <div class="column">
+                <img class="img has-big-margin-top draggable" src="img/files.svg"/>
+                <h1 class="card-title draggable">Reposition</h1>
+                <p class="is-size-5 has-margin-top has-big-margin-bottom draggable">Using the CSS3</p>
+            </div>
+        </div>
+    </div>
+	-->
+
+    <div style="width:100%;height:150px;background-color: red; overflow-x: hidden" id="navdome">
+        <div class="draggable" id="dragDiv0" style="transform-origin: 0 0;transform: translate(20px, 0px) rotate(50deg);">12321321</div>
+<!--        <img class="draggable" src="/drag/img/save.svg">-->
+    </div>
+    <!-- <div class="draggable" style="transform: translate(6px, 57px);z-index:4;">Reposition</div> -->
+    <!--    <div class="draggable" style="transform: translate(16px, 14px);z-index:2;">12321321</div>-->
+
+
+<!--<div style="">-->
+<!--    <ul>-->
+<!--        <li style="">文本：<input id="testVal" onclick="pitchInput('testVal',0)"/> </li>-->
+<!--        <li>字体大小：<input id="fontSize" onclick="pitchInput('fontSize',1)">px</li>-->
+<!--        <li>字间隔：<input id="letterSpacing" onclick="pitchInput('letterSpacing',2)">px</li>-->
+
+<!--    </ul>-->
+<!--    <button onclick="createText()">添加文本</button>-->
+
+<!--    <button>添加图片</button>-->
+<!--</div>-->
+
+
+<script type="text/javascript" src="/drag/js/dragScript.js?v=1"></script>
+<script type="text/javascript" src="/jquery/jquery-3.3.1.min.js"></script>
+
+<script>
+    //当前点击的输入框
+    function getTxtStyle() {
+        var atPseentStyle = pitchEvent.target.style;
+        //获取父页面的dom
+        var parentWindow = window.parent.document;
+        parentWindow.getElementById("testVal").value = pitchEvent.target.innerText;
+        parentWindow.getElementById("fontSize").value = atPseentStyle.fontSize.replace("px","")
+        parentWindow.getElementById("letterSpacing").value = atPseentStyle.letterSpacing.replace("em","")*10
+        parentWindow.getElementsByClassName()
+        // $("#testVal").val(pitchEvent.target.innerText);
+        // $("#fontSize").val(atPseentStyle.fontSize.replace("px",""));
+        // $("#letterSpacing").val(atPseentStyle.letterSpacing.replace("em","")*10)
+    }
+
+
+</script>
+</body>
+
+</html>

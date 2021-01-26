@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/drag/css/main.css">
+    <style>
+        body{
+            margin: 0px !important;
+        }
+    </style>
+</head>
+<body style="height: 150px">
+<!--
+    <div class="container has-text-centered">
+        <div class="columns has-text-centered is-desktop has-margin-top">
+            <div class="column">
+                <img class="img has-big-margin-top draggable" src="img/files.svg"/>
+                <h1 class="card-title draggable">Reposition</h1>
+                <p class="is-size-5 has-margin-top has-big-margin-bottom draggable">Using the CSS3</p>
+            </div>
+        </div>
+    </div>
+	-->
+
+<!--<div  >-->
+<!--    <div style="width:12000px;height:150px;background-color: red;" id="navdome">-->
+<!--        <div class="draggable" id="dragDvi0">12321321</div>-->
+<!--        <img class="draggable" src="/drag/img/save.svg">-->
+<!--    </div>-->
+<!--    &lt;!&ndash; <div class="draggable" style="transform: translate(6px, 57px);z-index:4;">Reposition</div> &ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="draggable" style="transform: translate(16px, 14px);z-index:2;">12321321</div>&ndash;&gt;-->
+
+<!--</div>-->
+
+<div style="overflow-x: scroll" >
+    <iframe style="width: 12000px" id="graphIframe" src="http://localhost:8080/test2.html">
+    </iframe>
+</div>
+
+<div style="">
+    <ul>
+        <li style="">文本：<input id="testVal" onclick="pitchInput('testVal',0)"/> </li>
+        <li>字体大小：<input id="fontSize" onclick="pitchInput('fontSize',1)">px</li>
+        <li>字间隔：<input id="letterSpacing" onclick="pitchInput('letterSpacing',2)">px</li>
+        <li>旋转：<input id="rotate" onclick="pitchInput('rotate',3)"></li>
+    </ul>
+    <button onclick="create()">添加文本</button>
+
+    <button >添加图片</button>
+</div>
+
+
+<!--<script type="text/javascript" src="/drag/js/dragScript.js?v=1"></script>-->
+<script type="text/javascript" src="/jquery/jquery-3.3.1.min.js"></script>
+
+<script>
+    //当前点击的输入框
+
+    var pitchEvent =null;
+    var pitchEventObj = {};//event,fontsize，value，x，y
+    var _iframe = document.getElementById("graphIframe").contentWindow;
+    function pitchInput(id,type){
+        var testType = true;
+        var pitchInputId = null;
+        pitchInputId = id;
+        //判断输入是否结束
+        $("#"+pitchInputId).on('compositionstart',function () {
+            console.log("开始")
+            if (pitchEvent==null){
+                alert("请选中需要设置的内容")
+                return;
+            }
+            testType = true;
+        })
+        $("#"+pitchInputId).on('compositionend',function () {
+            console.log("结束")
+            testType = true;
+        })
+
+        //监听当前输入的值
+        $("#"+pitchInputId).on('input',function () {
+            var id = pitchEvent.target.id;
+            switch (type) {
+                //修改文本信息
+                case 0:
+                    setVal(id,testType);
+                    break;
+                //修改fontsize
+                case 1:
+                    setFontSize(testType);
+                    break;
+                //修改旋转角度
+                case 2:
+                    setLetterSpacing(testType);
+                    break;
+                case 3:
+                    setRotate(testType)
+                    break;
+                case 4:
+                    break;
+            }
+
+        })
+
+        //设置文字大小
+        function setFontSize(testType) {
+            setTimeout(function(){
+                if(testType){
+                    console.log($("#fontSize").val());
+                    pitchEvent.target.style.fontSize = $("#fontSize").val()+"px";
+                }
+            },0);
+        }
+
+        //设置文字内容
+        function setVal(id,testType) {
+            console.log(testType)
+            setTimeout(function(){
+                if(testType){
+                    // $("#"+id).html($("#testVal").val())
+                    console.log(pitchEvent);
+                    pitchEvent.target.innerHTML = $("#testVal").val();
+                    // var ifframeWindow = document.getElementById('graphIframe').contentWindow
+                    // ifframeWindow.getElementById(''+id).innerHTML = $("#testVal").val();
+                }
+            },0);
+
+        }
+
+        //设置文字间隔
+        function setLetterSpacing(testType) {
+            setTimeout(function(){
+                if(testType){
+                    pitchEvent.target.style.letterSpacing = $('#letterSpacing').val()/10+'em'
+                }
+            },0);
+
+        }
+        function setRotate(testType) {
+            setTimeout(function(){
+                if(testType){
+
+                    let id = pitchEvent.target.id;
+                    let rotatrVal = $('#rotate').val();
+                    let offSetWidth = pitchEvent.target.offsetWidth;
+                    let offSetHeight = pitchEvent.target.offsetHeight;
+                    console.log(pitchEvent);
+                    var dx = _iframe.pitchEventObj[id].dragX;
+                    var dy =  _iframe.pitchEventObj[id].dragY;
+                    _iframe.pitchEventObj[id].rotate = rotatrVal;
+
+                    // pitchEvent.target.style.transformOrigin = "0 0"
+                    pitchEvent.target.style.transform = 'translate('+dx+'px,'+dy+'px) rotate('+rotatrVal+'deg)'
+
+                    // _iframe.addIncident(pitchEvent.target);
+                }
+            },0);
+        }
+    }
+
+
+
+    //在子页面创建一个文本节点
+    function create() {
+        _iframe.createText();
+    }
+
+
+
+
+</script>
+</body>
+
+</html>
