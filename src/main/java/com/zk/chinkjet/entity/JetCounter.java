@@ -19,6 +19,9 @@ public class JetCounter {
     private Integer x;
 
     private Integer y;
+
+    private String style;
+
     //旋转角度
     private Integer rotate;
     //比例
@@ -44,14 +47,14 @@ public class JetCounter {
     //图片原始宽度
     private String originWidth;
     //图片原始高度
-    private String originHtight;
+    private String originHeight;
 
     //计数器设置
     private CounterNum setCounterNum;
     //二维码设置
     private QRCode setQRCode;
     //字体样式
-    private TextStyle style;
+    private int typeface;
     //图片设置
     private Image imgStyle;
 
@@ -60,6 +63,22 @@ public class JetCounter {
     private String postpone;
 
     private Integer postponeVal;
+
+    public int getTypeface() {
+        return typeface;
+    }
+
+    public void setTypeface(int typeface) {
+        this.typeface = typeface;
+    }
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
 
     public String getExcelArr() {
         return excelArr;
@@ -221,12 +240,13 @@ public class JetCounter {
         this.originWidth = originWidth;
     }
 
-    public String getOriginHtight() {
-        return originHtight;
+
+    public String getOriginHeight() {
+        return originHeight;
     }
 
-    public void setOriginHtight(String originHtight) {
-        this.originHtight = originHtight;
+    public void setOriginHeight(String originHeight) {
+        this.originHeight = originHeight;
     }
 
     public CounterNum getSetCounterNum() {
@@ -243,14 +263,6 @@ public class JetCounter {
 
     public void setSetQRCode(QRCode setQRCode) {
         this.setQRCode = setQRCode;
-    }
-
-    public TextStyle getStyle() {
-        return style;
-    }
-
-    public void setStyle(TextStyle style) {
-        this.style = style;
     }
 
     public Image getImgStyle() {
