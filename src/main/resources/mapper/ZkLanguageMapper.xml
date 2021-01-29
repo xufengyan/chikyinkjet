@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zk.chinkjet.dao.LanguageDao">
+
+    <resultMap type="com.zk.chinkjet.entity.Language" id="LanguageResult">
+        <result property="stringId"    column="String_ID"    />
+        <result property="stringIdLanguagename"    column="String_ID_LanguageName"    />
+        <result property="stringIdY"    column="String_ID_Y"    />
+        <result property="stringIdN"    column="String_ID_N"    />
+        <result property="stringIdEscape"    column="String_ID_Escape"    />
+        <result property="stringIdNew"    column="String_ID_New"    />
+        <result property="stringIdOpen"    column="String_ID_Open"    />
+        <result property="stringIdRename"    column="String_ID_Rename"    />
+        <result property="stringIdSave"    column="String_ID_Save"    />
+        <result property="stringIdPrint"    column="String_ID_Print"    />
+        <result property="stringIdAdd"    column="String_ID_Add"    />
+        <result property="stringIdSettings"    column="String_ID_Settings"    />
+        <result property="stringIdShutdown"    column="String_ID_Shutdown"    />
+        <result property="stringIdEdit"    column="String_ID_Edit"    />
+        <result property="stringIdDelete"    column="String_ID_Delete"    />
+        <result property="stringIdParagraph"    column="String_ID_Paragraph"    />
+        <result property="stringIdPreview"    column="String_ID_Preview"    />
+        <result property="stringIdStop"    column="String_ID_Stop"    />
+        <result property="stringIdPrintsettings"    column="String_ID_PrintSettings"    />
+        <result property="stringIdNozzlesettings"    column="String_ID_NozzleSettings"    />
+        <result property="stringIdTimesetting"    column="String_ID_TimeSetting"    />
+        <result property="stringIdLanguages"    column="String_ID_Languages"    />
+        <result property="stringIdDataexport"    column="String_ID_DataExport"    />
+        <result property="stringIdTouchcalibration"    column="String_ID_TouchCalibration"    />
+        <result property="stringIdRestorefactory"    column="String_ID_RestoreFactory"    />
+        <result property="stringIdTroubleshooting"    column="String_ID_Troubleshooting"    />
+        <result property="stringIdDigitalcertificate"    column="String_ID_DigitalCertificate"    />
+        <result property="stringIdFwupgrade"    column="String_ID_FWUpgrade"    />
+        <result property="stringIdUiupgrade"    column="String_ID_UIUpgrade"    />
+        <result property="stringIdPrintheadtype"    column="String_ID_PrintheadType"    />
+        <result property="stringIdPrintheadnum"    column="String_ID_PrintheadNum"    />
+        <result property="stringIdPrintheadlrspace"    column="String_ID_PrintheadLRSpace"    />
+        <result property="stringIdPrintheadudspace"    column="String_ID_PrintheadUDSpace"    />
+        <result property="stringIdPrintheadsequence"    column="String_ID_PrintheadSequence"    />
+        <result property="stringIdNozzleselect"    column="String_ID_NozzleSelect"    />
+        <result property="stringIdNozzlevoltage"    column="String_ID_NozzleVoltage"    />
+        <result property="stringIdNozzlepulsewidth"    column="String_ID_NozzlePulseWidth"    />
+        <result property="stringIdLightselect"    column="String_ID_LightSelect"    />
+        <result property="stringIdLeftnozzle"    column="String_ID_LeftNozzle"    />
+        <result property="stringIdRightnozzle"    column="String_ID_RightNozzle"    />
+        <result property="stringIdIntlight"    column="String_ID_IntLight"    />
+        <result property="stringIdExtlight"    column="String_ID_ExtLight"    />
+        <result property="stringIdFlashspraytime"    column="String_ID_FlashSprayTime"    />
+        <result property="stringIdTbrev"    column="String_ID_TBRev"    />
+        <result property="stringIdLrrev"    column="String_ID_LRRev"    />
+        <result property="stringIdStartsignal"    column="String_ID_StartSignal"    />
+        <result property="stringIdHand"    column="String_ID_Hand"    />
+        <result property="stringIdLight"    column="String_ID_Light"    />
+        <result property="stringIdDis"    column="String_ID_Dis"    />
+        <result property="stringIdTimerreprint"    column="String_ID_TimerRePrint"    />
+        <result property="stringIdDisinpoints"    column="String_ID_DisInPoints"    />
+        <result property="stringIdSyncmode"    column="String_ID_SyncMode"    />
+        <result property="stringIdSyncwordwidth"    column="String_ID_SyncWordWidth"    />
+        <result property="stringIdPpr"    column="String_ID_PPR"    />
+        <result property="stringId2r"    column="String_ID_2R"    />
+        <result property="stringIdLightdelay"    column="String_ID_LightDelay"    />
+        <result property="stringIdPrintspeed"    column="String_ID_PrintSpeed"    />
+        <result property="stringIdPrintdarkness"    column="String_ID_PrintDarkness"    />
+        <result property="stringIdKeybeep"    column="String_ID_KeyBeep"    />
+        <result property="stringIdPrintbeep"    column="String_ID_PrintBeep"    />
+        <result property="stringIdPrinttimes"    column="String_ID_PrintTimes"    />
+        <result property="stringIdEncoder"    column="String_ID_Encoder"    />
+        <result property="stringIdTimer"    column="String_ID_Timer"    />
+        <result property="stringIdText"    column="String_ID_Text"    />
+        <result property="stringIdDate"    column="String_ID_Date"    />
+        <result property="stringIdImage"    column="String_ID_Image"    />
+        <result property="stringIdSymbology"    column="String_ID_Symbology"    />
+        <result property="stringIdVarbarcode"    column="String_ID_VarBarcode"    />
+        <result property="stringIdCounter"    column="String_ID_Counter"    />
+        <result property="stringIdTable"    column="String_ID_Table"    />
+        <result property="stringIdIcon"    column="String_ID_Icon"    />
+        <result property="stringIdVariable"    column="String_ID_Variable"    />
+        <result property="stringIdBlank"    column="String_ID_Blank"    />
+        <result property="stringIdLinefeed"    column="String_ID_LineFeed"    />
+        <result property="stringIdSymbol"    column="String_ID_Symbol"    />
+        <result property="stringIdR"    column="String_ID_R"    />
+        <result property="stringIdD"    column="String_ID_D"    />
+        <result property="stringIdCare"    column="String_ID_Care"    />
+        <result property="stringIdDisablehook"    column="String_ID_DisableHook"    />
+        <result property="stringIdWet"    column="String_ID_Wet"    />
+        <result property="stringIdUpward"    column="String_ID_Upward"    />
+        <result property="stringIdStackinglayers"    column="String_ID_StackingLayers"    />
+        <result property="stringIdStrprefix"    column="String_ID_StrPrefix"    />
+        <result property="stringIdStrsuffix"    column="String_ID_StrSuffix"    />
+        <result property="stringIdSpecialsymbol"    column="String_ID_SpecialSymbol"    />
+        <result property="stringIdFontsettings"    column="String_ID_FontSettings"    />
+        <result property="stringIdFont"    column="String_ID_Font"    />
+        <result property="stringIdFontsize"    column="String_ID_FontSize"    />
+        <result property="stringIdSpacing"    column="String_ID_Spacing"    />
+        <result property="stringIdStyle"    column="String_ID_Style"    />
+        <result property="stringIdBold"    column="String_ID_Bold"    />
+        <result property="stringIdItalic"    column="String_ID_Italic"    />
+        <result property="stringIdRotate"    column="String_ID_Rotate"    />
+        <result property="stringIdSolid"    column="String_ID_Solid"    />
+        <result property="stringIdRoundlattice"    column="String_ID_RoundLattice"    />
+        <result property="stringIdSquarelattice"    column="String_ID_SquareLattice"    />
+        <result property="stringIdDeletestyle"    column="String_ID_DeleteStyle"    />
+        <result property="stringIdMinvalue"    column="String_ID_MinValue"    />
+        <result property="stringIdMaxvalue"    column="String_ID_MaxValue"    />
+        <result property="stringIdHeight"    column="String_ID_Height"    />
+        <result property="stringIdWidth"    column="String_ID_Width"    />
+        <result property="stringIdAttribute"    column="String_ID_Attribute"    />
+        <result property="stringIdCreationtime"    column="String_ID_CreationTime"    />
+        <result property="stringIdSize"    column="String_ID_Size"    />
+        <result property="stringIdDecimalsystem"    column="String_ID_DecimalSystem"    />
+        <result property="stringIdOctal"    column="String_ID_Octal"    />
+        <result property="stringIdDecimal"    column="String_ID_Decimal"    />
+        <result property="stringIdHexadecimal"    column="String_ID_Hexadecimal"    />
+        <result property="stringIdDigits"    column="String_ID_Digits"    />
+        <result property="stringIdLeadingchar"    column="String_ID_LeadingChar"    />
+        <result property="stringIdInitial"    column="String_ID_Initial"    />
+        <result property="stringIdStepping"    column="String_ID_Stepping"    />
+        <result property="stringIdRepeat"    column="String_ID_Repeat"    />
+        <result property="stringIdDelay"    column="String_ID_Delay"    />
+        <result property="stringIdYear"    column="String_ID_Year"    />
+        <result property="stringIdMonth"    column="String_ID_Month"    />
+        <result property="stringIdDay"    column="String_ID_Day"    />
+        <result property="stringIdNewzkmldoc"    column="String_ID_NewZKMLDoc"    />
+        <result property="stringIdFile"    column="String_ID_File"    />
+        <result property="stringIdLocal"    column="String_ID_Local"    />
+        <result property="stringIdUsb"    column="String_ID_USB"    />
+        <result property="stringIdPrintedtimes"    column="String_ID_PrintedTimes"    />
+        <result property="stringIdTotalprintedtimes"    column="String_ID_TotalPrintedTimes"    />
+        <result property="stringIdThisprintedtimes"    column="String_ID_ThisPrintedTimes"    />
+        <result property="stringIdRemaintimes"    column="String_ID_RemainTimes"    />
+        <result property="stringIdWating"    column="String_ID_Wating"    />
+        <result property="stringIdPrinting"    column="String_ID_Printing"    />
+        <result property="stringIdTips"    column="String_ID_Tips"    />
+        <result property="stringIdRestoreinfo"    column="String_ID_RestoreInfo"    />
+        <result property="stringIdOpenfailed"    column="String_ID_OpenFailed"    />
+        <result property="stringIdSavesuccessed"    column="String_ID_SaveSuccessed"    />
+        <result property="stringIdSavefailed"    column="String_ID_SaveFailed"    />
+        <result property="stringIdNoupgradeWarnning"    column="String_ID_NoUpgrade_Warnning"    />
+        <result property="stringIdUpgradeok"    column="String_ID_UpgradeOK"    />
+        <result property="stringIdUdiskWarnning"    column="String_ID_UDisk_Warnning"    />
+        <result property="stringIdUdiskExport"    column="String_ID_UDisk_Export"    />
+        <result property="stringIdUdiskWriteerror"    column="String_ID_UDisk_WriteError"    />
+        <result property="stringIdUdiskLooking"    column="String_ID_UDisk_Looking"    />
+        <result property="stringIdSavingFile"    column="String_ID_Saving_File"    />
+        <result property="stringIdConfirmdelete"    column="String_ID_ConfirmDelete"    />
+        <result property="stringIdDeletesuccessed"    column="String_ID_DeleteSuccessed"    />
+        <result property="stringIdDeletefailed"    column="String_ID_DeleteFailed"    />
+        <result property="stringIdShutdowninfo"    column="String_ID_ShutdownInfo"    />
+        <result property="stringIdPoweroffinfo"    column="String_ID_PowerOffInfo"    />
+        <result property="stringIdLowbattery"    column="String_ID_LowBattery"    />
+        <result property="stringIdWaitamoment"    column="String_ID_WaitAMoment"    />
+        <result property="stringIdCalibri"    column="String_ID_Calibri"    />
+        <result property="stringIdArial"    column="String_ID_Arial"    />
+        <result property="stringIdDroid"    column="String_ID_Droid"    />
+        <result property="stringIdMontserrat"    column="String_ID_Montserrat"    />
+        <result property="stringIdOpensans"    column="String_ID_OpenSans"    />
+        <result property="stringIdTimesnewroman"    column="String_ID_TimesNewRoman"    />
+        <result property="stringIdSourcehansans"    column="String_ID_SourceHanSans"    />
+        <result property="stringIdSourcehanserif"    column="String_ID_SourceHanSerif"    />
+        <result property="stringIdYahei"    column="String_ID_YaHei"    />
+        <result property="stringIdSimsun"    column="String_ID_SimSun"    />
+        <result property="stringIdFangsong"    column="String_ID_FangSong"    />
+        <result property="stringIdSimhei"    column="String_ID_SimHei"    />
+        <result property="stringIdKaiti"    column="String_ID_KaiTi"    />
+        <result property="stringIdLisu"    column="String_ID_LiSu"    />
+        <result property="stringIdYouyuan"    column="String_ID_YouYuan"    />
+        <result property="stringIdFoundersimhei"    column="String_ID_FounderSimHei"    />
+        <result property="stringIdFoundershusong"    column="String_ID_FounderShuSong"    />
+        <result property="stringIdFounderfangsong"    column="String_ID_FounderFangSong"    />
+        <result property="stringIdFounderkaiti"    column="String_ID_FounderKaiTi"    />
+        <result property="stringIdSquaredot"    column="String_ID_SquareDot"    />
+        <result property="stringIdRounddot"    column="String_ID_RoundDot"    />
+        <result property="stringIdExternalfont"    column="String_ID_ExternalFont"    />
+        <result property="stringIdDealerId"    column="String_ID_Dealer_ID"    />
+        <result property="stringIdDeviceSn"    column="String_ID_Device_SN"    />
+        <result property="stringIdCapacity"    column="String_ID_Capacity"    />
+        <result property="stringIdInkcartridgeabnormal"    column="String_ID_InkCartridgeAbnormal"    />
+        <result property="stringIdInkcartridgereplace"    column="String_ID_InkCartridgeReplace"    />
+        <result property="stringIdNoinkcartridge"    column="String_ID_NoInkCartridge"    />
+        <result property="stringIdTips2"    column="String_ID_Tips2"    />
+        <result property="stringIdMarginalarm"    column="String_ID_MarginAlarm"    />
+        <result property="stringIdRest"    column="String_ID_Rest"    />
+        <result property="stringIdPwd"    column="String_ID_PWD"    />
+        <result property="stringIdInputpwd"    column="String_ID_InputPWD"    />
+        <result property="stringIdInputnewpwd"    column="String_ID_InputNewPWD"    />
+        <result property="stringIdYMirror"    column="String_ID_Y_Mirror"    />
+        <result property="stringIdClear"    column="String_ID_Clear"    />
+        <result property="stringIdPause"    column="String_ID_Pause"    />
+        <result property="stringIdNetwork"    column="String_ID_Network"    />
+        <result property="stringIdLocalip"    column="String_ID_LocalIP"    />
+        <result property="stringIdSubnetmask"    column="String_ID_SubnetMask"    />
+        <result property="stringIdDefaultgateway"    column="String_ID_DefaultGateway"    />
+        <result property="stringIdServerip"    column="String_ID_ServerIP"    />
+        <result property="stringIdCommandport"    column="String_ID_CommandPort"    />
+        <result property="stringIdDataport"    column="String_ID_DataPort"    />
+        <result property="stringIdRepeatprint"    column="String_ID_RepeatPrint"    />
+        <result property="stringIdRepeattimes"    column="String_ID_RepeatTimes"    />
+        <result property="stringIdRepeatdelay"    column="String_ID_RepeatDelay"    />
+        <result property="stringIdLock"    column="String_ID_Lock"    />
+        <result property="stringIdUnlock"    column="String_ID_Unlock"    />
+    </resultMap>
+
+    <sql id="selectLanguageVo">
+        select String_ID, String_ID_LanguageName, String_ID_Y, String_ID_N, String_ID_Escape, String_ID_New, String_ID_Open, String_ID_Rename, String_ID_Save, String_ID_Print, String_ID_Add, String_ID_Settings, String_ID_Shutdown, String_ID_Edit, String_ID_Delete, String_ID_Paragraph, String_ID_Preview, String_ID_Stop, String_ID_PrintSettings, String_ID_NozzleSettings, String_ID_TimeSetting, String_ID_Languages, String_ID_DataExport, String_ID_TouchCalibration, String_ID_RestoreFactory, String_ID_Troubleshooting, String_ID_DigitalCertificate, String_ID_FWUpgrade, String_ID_UIUpgrade, String_ID_PrintheadType, String_ID_PrintheadNum, String_ID_PrintheadLRSpace, String_ID_PrintheadUDSpace, String_ID_PrintheadSequence, String_ID_NozzleSelect, String_ID_NozzleVoltage, String_ID_NozzlePulseWidth, String_ID_LightSelect, String_ID_LeftNozzle, String_ID_RightNozzle, String_ID_IntLight, String_ID_ExtLight, String_ID_FlashSprayTime, String_ID_TBRev, String_ID_LRRev, String_ID_StartSignal, String_ID_Hand, String_ID_Light, String_ID_Dis, String_ID_TimerRePrint, String_ID_DisInPoints, String_ID_SyncMode, String_ID_SyncWordWidth, String_ID_PPR, String_ID_2R, String_ID_LightDelay, String_ID_PrintSpeed, String_ID_PrintDarkness, String_ID_KeyBeep, String_ID_PrintBeep, String_ID_PrintTimes, String_ID_Encoder, String_ID_Timer, String_ID_Text, String_ID_Date, String_ID_Image, String_ID_Symbology, String_ID_VarBarcode, String_ID_Counter, String_ID_Table, String_ID_Icon, String_ID_Variable, String_ID_Blank, String_ID_LineFeed, String_ID_Symbol, String_ID_R, String_ID_D, String_ID_Care, String_ID_DisableHook, String_ID_Wet, String_ID_Upward, String_ID_StackingLayers, String_ID_StrPrefix, String_ID_StrSuffix, String_ID_SpecialSymbol, String_ID_FontSettings, String_ID_Font, String_ID_FontSize, String_ID_Spacing, String_ID_Style, String_ID_Bold, String_ID_Italic, String_ID_Rotate, String_ID_Solid, String_ID_RoundLattice, String_ID_SquareLattice, String_ID_DeleteStyle, String_ID_MinValue, String_ID_MaxValue, String_ID_Height, String_ID_Width, String_ID_Attribute, String_ID_CreationTime, String_ID_Size, String_ID_DecimalSystem, String_ID_Octal, String_ID_Decimal, String_ID_Hexadecimal, String_ID_Digits, String_ID_LeadingChar, String_ID_Initial, String_ID_Stepping, String_ID_Repeat, String_ID_Delay, String_ID_Year, String_ID_Month, String_ID_Day, String_ID_NewZKMLDoc, String_ID_File, String_ID_Local, String_ID_USB, String_ID_PrintedTimes, String_ID_TotalPrintedTimes, String_ID_ThisPrintedTimes, String_ID_RemainTimes, String_ID_Wating, String_ID_Printing, String_ID_Tips, String_ID_RestoreInfo, String_ID_OpenFailed, String_ID_SaveSuccessed, String_ID_SaveFailed, String_ID_NoUpgrade_Warnning, String_ID_UpgradeOK, String_ID_UDisk_Warnning, String_ID_UDisk_Export, String_ID_UDisk_WriteError, String_ID_UDisk_Looking, String_ID_Saving_File, String_ID_ConfirmDelete, String_ID_DeleteSuccessed, String_ID_DeleteFailed, String_ID_ShutdownInfo, String_ID_PowerOffInfo, String_ID_LowBattery, String_ID_WaitAMoment, String_ID_Calibri, String_ID_Arial, String_ID_Droid, String_ID_Montserrat, String_ID_OpenSans, String_ID_TimesNewRoman, String_ID_SourceHanSans, String_ID_SourceHanSerif, String_ID_YaHei, String_ID_SimSun, String_ID_FangSong, String_ID_SimHei, String_ID_KaiTi, String_ID_LiSu, String_ID_YouYuan, String_ID_FounderSimHei, String_ID_FounderShuSong, String_ID_FounderFangSong, String_ID_FounderKaiTi, String_ID_SquareDot, String_ID_RoundDot, String_ID_ExternalFont, String_ID_Dealer_ID, String_ID_Device_SN, String_ID_Capacity, String_ID_InkCartridgeAbnormal, String_ID_InkCartridgeReplace, String_ID_NoInkCartridge, String_ID_Tips2, String_ID_MarginAlarm, String_ID_Rest, String_ID_PWD, String_ID_InputPWD, String_ID_InputNewPWD, String_ID_Y_Mirror, String_ID_Clear, String_ID_Pause, String_ID_Network, String_ID_LocalIP, String_ID_SubnetMask, String_ID_DefaultGateway, String_ID_ServerIP, String_ID_CommandPort, String_ID_DataPort, String_ID_RepeatPrint, String_ID_RepeatTimes, String_ID_RepeatDelay, String_ID_Lock, String_ID_Unlock from zk_language
+    </sql>
+
+    <select id="selectLanguageList" parameterType="com.zk.chinkjet.entity.Language" resultMap="LanguageResult">
+        <include refid="selectLanguageVo"/>
+        <where>
+            <if test="stringIdLanguagename != null  and stringIdLanguagename != ''"> and String_ID_LanguageName like concat('%', #{stringIdLanguagename}, '%')</if>
+            <if test="stringIdY != null  and stringIdY != ''"> and String_ID_Y = #{stringIdY}</if>
+            <if test="stringIdN != null  and stringIdN != ''"> and String_ID_N = #{stringIdN}</if>
+            <if test="stringIdEscape != null  and stringIdEscape != ''"> and String_ID_Escape = #{stringIdEscape}</if>
+            <if test="stringIdNew != null  and stringIdNew != ''"> and String_ID_New = #{stringIdNew}</if>
+            <if test="stringIdOpen != null  and stringIdOpen != ''"> and String_ID_Open = #{stringIdOpen}</if>
+            <if test="stringIdRename != null  and stringIdRename != ''"> and String_ID_Rename like concat('%', #{stringIdRename}, '%')</if>
+            <if test="stringIdSave != null  and stringIdSave != ''"> and String_ID_Save = #{stringIdSave}</if>
+            <if test="stringIdPrint != null  and stringIdPrint != ''"> and String_ID_Print = #{stringIdPrint}</if>
+            <if test="stringIdAdd != null  and stringIdAdd != ''"> and String_ID_Add = #{stringIdAdd}</if>
+            <if test="stringIdSettings != null  and stringIdSettings != ''"> and String_ID_Settings = #{stringIdSettings}</if>
+            <if test="stringIdShutdown != null  and stringIdShutdown != ''"> and String_ID_Shutdown = #{stringIdShutdown}</if>
+            <if test="stringIdEdit != null  and stringIdEdit != ''"> and String_ID_Edit = #{stringIdEdit}</if>
+            <if test="stringIdDelete != null  and stringIdDelete != ''"> and String_ID_Delete = #{stringIdDelete}</if>
+            <if test="stringIdParagraph != null  and stringIdParagraph != ''"> and String_ID_Paragraph = #{stringIdParagraph}</if>
+            <if test="stringIdPreview != null  and stringIdPreview != ''"> and String_ID_Preview = #{stringIdPreview}</if>
+            <if test="stringIdStop != null  and stringIdStop != ''"> and String_ID_Stop = #{stringIdStop}</if>
+            <if test="stringIdPrintsettings != null  and stringIdPrintsettings != ''"> and String_ID_PrintSettings = #{stringIdPrintsettings}</if>
+            <if test="stringIdNozzlesettings != null  and stringIdNozzlesettings != ''"> and String_ID_NozzleSettings = #{stringIdNozzlesettings}</if>
+            <if test="stringIdTimesetting != null  and stringIdTimesetting != ''"> and String_ID_TimeSetting = #{stringIdTimesetting}</if>
+            <if test="stringIdLanguages != null  and stringIdLanguages != ''"> and String_ID_Languages = #{stringIdLanguages}</if>
+            <if test="stringIdDataexport != null  and stringIdDataexport != ''"> and String_ID_DataExport = #{stringIdDataexport}</if>
+            <if test="stringIdTouchcalibration != null  and stringIdTouchcalibration != ''"> and String_ID_TouchCalibration = #{stringIdTouchcalibration}</if>
+            <if test="stringIdRestorefactory != null  and stringIdRestorefactory != ''"> and String_ID_RestoreFactory = #{stringIdRestorefactory}</if>
+            <if test="stringIdTroubleshooting != null  and stringIdTroubleshooting != ''"> and String_ID_Troubleshooting = #{stringIdTroubleshooting}</if>
+            <if test="stringIdDigitalcertificate != null  and stringIdDigitalcertificate != ''"> and String_ID_DigitalCertificate = #{stringIdDigitalcertificate}</if>
+            <if test="stringIdFwupgrade != null  and stringIdFwupgrade != ''"> and String_ID_FWUpgrade = #{stringIdFwupgrade}</if>
+            <if test="stringIdUiupgrade != null  and stringIdUiupgrade != ''"> and String_ID_UIUpgrade = #{stringIdUiupgrade}</if>
+            <if test="stringIdPrintheadtype != null  and stringIdPrintheadtype != ''"> and String_ID_PrintheadType = #{stringIdPrintheadtype}</if>
+            <if test="stringIdPrintheadnum != null  and stringIdPrintheadnum != ''"> and String_ID_PrintheadNum = #{stringIdPrintheadnum}</if>
+            <if test="stringIdPrintheadlrspace != null  and stringIdPrintheadlrspace != ''"> and String_ID_PrintheadLRSpace = #{stringIdPrintheadlrspace}</if>
+            <if test="stringIdPrintheadudspace != null  and stringIdPrintheadudspace != ''"> and String_ID_PrintheadUDSpace = #{stringIdPrintheadudspace}</if>
+            <if test="stringIdPrintheadsequence != null  and stringIdPrintheadsequence != ''"> and String_ID_PrintheadSequence = #{stringIdPrintheadsequence}</if>
+            <if test="stringIdNozzleselect != null  and stringIdNozzleselect != ''"> and String_ID_NozzleSelect = #{stringIdNozzleselect}</if>
+            <if test="stringIdNozzlevoltage != null  and stringIdNozzlevoltage != ''"> and String_ID_NozzleVoltage = #{stringIdNozzlevoltage}</if>
+            <if test="stringIdNozzlepulsewidth != null  and stringIdNozzlepulsewidth != ''"> and String_ID_NozzlePulseWidth = #{stringIdNozzlepulsewidth}</if>
+            <if test="stringIdLightselect != null  and stringIdLightselect != ''"> and String_ID_LightSelect = #{stringIdLightselect}</if>
+            <if test="stringIdLeftnozzle != null  and stringIdLeftnozzle != ''"> and String_ID_LeftNozzle = #{stringIdLeftnozzle}</if>
+            <if test="stringIdRightnozzle != null  and stringIdRightnozzle != ''"> and String_ID_RightNozzle = #{stringIdRightnozzle}</if>
+            <if test="stringIdIntlight != null  and stringIdIntlight != ''"> and String_ID_IntLight = #{stringIdIntlight}</if>
+            <if test="stringIdExtlight != null  and stringIdExtlight != ''"> and String_ID_ExtLight = #{stringIdExtlight}</if>
+            <if test="stringIdFlashspraytime != null  and stringIdFlashspraytime != ''"> and String_ID_FlashSprayTime = #{stringIdFlashspraytime}</if>
+            <if test="stringIdTbrev != null  and stringIdTbrev != ''"> and String_ID_TBRev = #{stringIdTbrev}</if>
+            <if test="stringIdLrrev != null  and stringIdLrrev != ''"> and String_ID_LRRev = #{stringIdLrrev}</if>
+            <if test="stringIdStartsignal != null  and stringIdStartsignal != ''"> and String_ID_StartSignal = #{stringIdStartsignal}</if>
+            <if test="stringIdHand != null  and stringIdHand != ''"> and String_ID_Hand = #{stringIdHand}</if>
+            <if test="stringIdLight != null  and stringIdLight != ''"> and String_ID_Light = #{stringIdLight}</if>
+            <if test="stringIdDis != null  and stringIdDis != ''"> and String_ID_Dis = #{stringIdDis}</if>
+            <if test="stringIdTimerreprint != null  and stringIdTimerreprint != ''"> and String_ID_TimerRePrint = #{stringIdTimerreprint}</if>
+            <if test="stringIdDisinpoints != null  and stringIdDisinpoints != ''"> and String_ID_DisInPoints = #{stringIdDisinpoints}</if>
+            <if test="stringIdSyncmode != null  and stringIdSyncmode != ''"> and String_ID_SyncMode = #{stringIdSyncmode}</if>
+            <if test="stringIdSyncwordwidth != null  and stringIdSyncwordwidth != ''"> and String_ID_SyncWordWidth = #{stringIdSyncwordwidth}</if>
+            <if test="stringIdPpr != null  and stringIdPpr != ''"> and String_ID_PPR = #{stringIdPpr}</if>
+            <if test="stringId2r != null  and stringId2r != ''"> and String_ID_2R = #{stringId2r}</if>
+            <if test="stringIdLightdelay != null  and stringIdLightdelay != ''"> and String_ID_LightDelay = #{stringIdLightdelay}</if>
+            <if test="stringIdPrintspeed != null  and stringIdPrintspeed != ''"> and String_ID_PrintSpeed = #{stringIdPrintspeed}</if>
+            <if test="stringIdPrintdarkness != null  and stringIdPrintdarkness != ''"> and String_ID_PrintDarkness = #{stringIdPrintdarkness}</if>
+            <if test="stringIdKeybeep != null  and stringIdKeybeep != ''"> and String_ID_KeyBeep = #{stringIdKeybeep}</if>
+            <if test="stringIdPrintbeep != null  and stringIdPrintbeep != ''"> and String_ID_PrintBeep = #{stringIdPrintbeep}</if>
+            <if test="stringIdPrinttimes != null  and stringIdPrinttimes != ''"> and String_ID_PrintTimes = #{stringIdPrinttimes}</if>
+            <if test="stringIdEncoder != null  and stringIdEncoder != ''"> and String_ID_Encoder = #{stringIdEncoder}</if>
+            <if test="stringIdTimer != null  and stringIdTimer != ''"> and String_ID_Timer = #{stringIdTimer}</if>
+            <if test="stringIdText != null  and stringIdText != ''"> and String_ID_Text = #{stringIdText}</if>
+            <if test="stringIdDate != null  and stringIdDate != ''"> and String_ID_Date = #{stringIdDate}</if>
+            <if test="stringIdImage != null  and stringIdImage != ''"> and String_ID_Image = #{stringIdImage}</if>
+            <if test="stringIdSymbology != null  and stringIdSymbology != ''"> and String_ID_Symbology = #{stringIdSymbology}</if>
+            <if test="stringIdVarbarcode != null  and stringIdVarbarcode != ''"> and String_ID_VarBarcode = #{stringIdVarbarcode}</if>
+            <if test="stringIdCounter != null  and stringIdCounter != ''"> and String_ID_Counter = #{stringIdCounter}</if>
+            <if test="stringIdTable != null  and stringIdTable != ''"> and String_ID_Table = #{stringIdTable}</if>
+            <if test="stringIdIcon != null  and stringIdIcon != ''"> and String_ID_Icon = #{stringIdIcon}</if>
+            <if test="stringIdVariable != null  and stringIdVariable != ''"> and String_ID_Variable = #{stringIdVariable}</if>
+            <if test="stringIdBlank != null  and stringIdBlank != ''"> and String_ID_Blank = #{stringIdBlank}</if>
+            <if test="stringIdLinefeed != null  and stringIdLinefeed != ''"> and String_ID_LineFeed = #{stringIdLinefeed}</if>
+            <if test="stringIdSymbol != null  and stringIdSymbol != ''"> and String_ID_Symbol = #{stringIdSymbol}</if>
+            <if test="stringIdR != null  and stringIdR != ''"> and String_ID_R = #{stringIdR}</if>
+            <if test="stringIdD != null  and stringIdD != ''"> and String_ID_D = #{stringIdD}</if>
+            <if test="stringIdCare != null  and stringIdCare != ''"> and String_ID_Care = #{stringIdCare}</if>
+            <if test="stringIdDisablehook != null  and stringIdDisablehook != ''"> and String_ID_DisableHook = #{stringIdDisablehook}</if>
+            <if test="stringIdWet != null  and stringIdWet != ''"> and String_ID_Wet = #{stringIdWet}</if>
+            <if test="stringIdUpward != null  and stringIdUpward != ''"> and String_ID_Upward = #{stringIdUpward}</if>
+            <if test="stringIdStackinglayers != null  and stringIdStackinglayers != ''"> and String_ID_StackingLayers = #{stringIdStackinglayers}</if>
+            <if test="stringIdStrprefix != null  and stringIdStrprefix != ''"> and String_ID_StrPrefix = #{stringIdStrprefix}</if>
+            <if test="stringIdStrsuffix != null  and stringIdStrsuffix != ''"> and String_ID_StrSuffix = #{stringIdStrsuffix}</if>
+            <if test="stringIdSpecialsymbol != null  and stringIdSpecialsymbol != ''"> and String_ID_SpecialSymbol = #{stringIdSpecialsymbol}</if>
+            <if test="stringIdFontsettings != null  and stringIdFontsettings != ''"> and String_ID_FontSettings = #{stringIdFontsettings}</if>
+            <if test="stringIdFont != null  and stringIdFont != ''"> and String_ID_Font = #{stringIdFont}</if>
+            <if test="stringIdFontsize != null  and stringIdFontsize != ''"> and String_ID_FontSize = #{stringIdFontsize}</if>
+            <if test="stringIdSpacing != null  and stringIdSpacing != ''"> and String_ID_Spacing = #{stringIdSpacing}</if>
+            <if test="stringIdStyle != null  and stringIdStyle != ''"> and String_ID_Style = #{stringIdStyle}</if>
+            <if test="stringIdBold != null  and stringIdBold != ''"> and String_ID_Bold = #{stringIdBold}</if>
+            <if test="stringIdItalic != null  and stringIdItalic != ''"> and String_ID_Italic = #{stringIdItalic}</if>
+            <if test="stringIdRotate != null  and stringIdRotate != ''"> and String_ID_Rotate = #{stringIdRotate}</if>
+            <if test="stringIdSolid != null  and stringIdSolid != ''"> and String_ID_Solid = #{stringIdSolid}</if>
+            <if test="stringIdRoundlattice != null  and stringIdRoundlattice != ''"> and String_ID_RoundLattice = #{stringIdRoundlattice}</if>
+            <if test="stringIdSquarelattice != null  and stringIdSquarelattice != ''"> and String_ID_SquareLattice = #{stringIdSquarelattice}</if>
+            <if test="stringIdDeletestyle != null  and stringIdDeletestyle != ''"> and String_ID_DeleteStyle = #{stringIdDeletestyle}</if>
+            <if test="stringIdMinvalue != null  and stringIdMinvalue != ''"> and String_ID_MinValue = #{stringIdMinvalue}</if>
+            <if test="stringIdMaxvalue != null  and stringIdMaxvalue != ''"> and String_ID_MaxValue = #{stringIdMaxvalue}</if>
+            <if test="stringIdHeight != null  and stringIdHeight != ''"> and String_ID_Height = #{stringIdHeight}</if>
+            <if test="stringIdWidth != null  and stringIdWidth != ''"> and String_ID_Width = #{stringIdWidth}</if>
+            <if test="stringIdAttribute != null  and stringIdAttribute != ''"> and String_ID_Attribute = #{stringIdAttribute}</if>
+            <if test="stringIdCreationtime != null  and stringIdCreationtime != ''"> and String_ID_CreationTime = #{stringIdCreationtime}</if>
+            <if test="stringIdSize != null  and stringIdSize != ''"> and String_ID_Size = #{stringIdSize}</if>
+            <if test="stringIdDecimalsystem != null  and stringIdDecimalsystem != ''"> and String_ID_DecimalSystem = #{stringIdDecimalsystem}</if>
+            <if test="stringIdOctal != null  and stringIdOctal != ''"> and String_ID_Octal = #{stringIdOctal}</if>
+            <if test="stringIdDecimal != null  and stringIdDecimal != ''"> and String_ID_Decimal = #{stringIdDecimal}</if>
+            <if test="stringIdHexadecimal != null  and stringIdHexadecimal != ''"> and String_ID_Hexadecimal = #{stringIdHexadecimal}</if>
+            <if test="stringIdDigits != null  and stringIdDigits != ''"> and String_ID_Digits = #{stringIdDigits}</if>
+            <if test="stringIdLeadingchar != null  and stringIdLeadingchar != ''"> and String_ID_LeadingChar = #{stringIdLeadingchar}</if>
+            <if test="stringIdInitial != null  and stringIdInitial != ''"> and String_ID_Initial = #{stringIdInitial}</if>
+            <if test="stringIdStepping != null  and stringIdStepping != ''"> and String_ID_Stepping = #{stringIdStepping}</if>
+            <if test="stringIdRepeat != null  and stringIdRepeat != ''"> and String_ID_Repeat = #{stringIdRepeat}</if>
+            <if test="stringIdDelay != null  and stringIdDelay != ''"> and String_ID_Delay = #{stringIdDelay}</if>
+            <if test="stringIdYear != null  and stringIdYear != ''"> and String_ID_Year = #{stringIdYear}</if>
+            <if test="stringIdMonth != null  and stringIdMonth != ''"> and String_ID_Month = #{stringIdMonth}</if>
+            <if test="stringIdDay != null  and stringIdDay != ''"> and String_ID_Day = #{stringIdDay}</if>
+            <if test="stringIdNewzkmldoc != null  and stringIdNewzkmldoc != ''"> and String_ID_NewZKMLDoc = #{stringIdNewzkmldoc}</if>
+            <if test="stringIdFile != null  and stringIdFile != ''"> and String_ID_File = #{stringIdFile}</if>
+            <if test="stringIdLocal != null  and stringIdLocal != ''"> and String_ID_Local = #{stringIdLocal}</if>
+            <if test="stringIdUsb != null  and stringIdUsb != ''"> and String_ID_USB = #{stringIdUsb}</if>
+            <if test="stringIdPrintedtimes != null  and stringIdPrintedtimes != ''"> and String_ID_PrintedTimes = #{stringIdPrintedtimes}</if>
+            <if test="stringIdTotalprintedtimes != null  and stringIdTotalprintedtimes != ''"> and String_ID_TotalPrintedTimes = #{stringIdTotalprintedtimes}</if>
+            <if test="stringIdThisprintedtimes != null  and stringIdThisprintedtimes != ''"> and String_ID_ThisPrintedTimes = #{stringIdThisprintedtimes}</if>
+            <if test="stringIdRemaintimes != null  and stringIdRemaintimes != ''"> and String_ID_RemainTimes = #{stringIdRemaintimes}</if>
+            <if test="stringIdWating != null  and stringIdWating != ''"> and String_ID_Wating = #{stringIdWating}</if>
+            <if test="stringIdPrinting != null  and stringIdPrinting != ''"> and String_ID_Printing = #{stringIdPrinting}</if>
+            <if test="stringIdTips != null  and stringIdTips != ''"> and String_ID_Tips = #{stringIdTips}</if>
+            <if test="stringIdRestoreinfo != null  and stringIdRestoreinfo != ''"> and String_ID_RestoreInfo = #{stringIdRestoreinfo}</if>
+            <if test="stringIdOpenfailed != null  and stringIdOpenfailed != ''"> and String_ID_OpenFailed = #{stringIdOpenfailed}</if>
+            <if test="stringIdSavesuccessed != null  and stringIdSavesuccessed != ''"> and String_ID_SaveSuccessed = #{stringIdSavesuccessed}</if>
+            <if test="stringIdSavefailed != null  and stringIdSavefailed != ''"> and String_ID_SaveFailed = #{stringIdSavefailed}</if>
+            <if test="stringIdNoupgradeWarnning != null  and stringIdNoupgradeWarnning != ''"> and String_ID_NoUpgrade_Warnning = #{stringIdNoupgradeWarnning}</if>
+            <if test="stringIdUpgradeok != null  and stringIdUpgradeok != ''"> and String_ID_UpgradeOK = #{stringIdUpgradeok}</if>
+            <if test="stringIdUdiskWarnning != null  and stringIdUdiskWarnning != ''"> and String_ID_UDisk_Warnning = #{stringIdUdiskWarnning}</if>
+            <if test="stringIdUdiskExport != null  and stringIdUdiskExport != ''"> and String_ID_UDisk_Export = #{stringIdUdiskExport}</if>
+            <if test="stringIdUdiskWriteerror != null  and stringIdUdiskWriteerror != ''"> and String_ID_UDisk_WriteError = #{stringIdUdiskWriteerror}</if>
+            <if test="stringIdUdiskLooking != null  and stringIdUdiskLooking != ''"> and String_ID_UDisk_Looking = #{stringIdUdiskLooking}</if>
+            <if test="stringIdSavingFile != null  and stringIdSavingFile != ''"> and String_ID_Saving_File = #{stringIdSavingFile}</if>
+            <if test="stringIdConfirmdelete != null  and stringIdConfirmdelete != ''"> and String_ID_ConfirmDelete = #{stringIdConfirmdelete}</if>
+            <if test="stringIdDeletesuccessed != null  and stringIdDeletesuccessed != ''"> and String_ID_DeleteSuccessed = #{stringIdDeletesuccessed}</if>
+            <if test="stringIdDeletefailed != null  and stringIdDeletefailed != ''"> and String_ID_DeleteFailed = #{stringIdDeletefailed}</if>
+            <if test="stringIdShutdowninfo != null  and stringIdShutdowninfo != ''"> and String_ID_ShutdownInfo = #{stringIdShutdowninfo}</if>
+            <if test="stringIdPoweroffinfo != null  and stringIdPoweroffinfo != ''"> and String_ID_PowerOffInfo = #{stringIdPoweroffinfo}</if>
+            <if test="stringIdLowbattery != null  and stringIdLowbattery != ''"> and String_ID_LowBattery = #{stringIdLowbattery}</if>
+            <if test="stringIdWaitamoment != null  and stringIdWaitamoment != ''"> and String_ID_WaitAMoment = #{stringIdWaitamoment}</if>
+            <if test="stringIdCalibri != null  and stringIdCalibri != ''"> and String_ID_Calibri = #{stringIdCalibri}</if>
+            <if test="stringIdArial != null  and stringIdArial != ''"> and String_ID_Arial = #{stringIdArial}</if>
+            <if test="stringIdDroid != null  and stringIdDroid != ''"> and String_ID_Droid = #{stringIdDroid}</if>
+            <if test="stringIdMontserrat != null  and stringIdMontserrat != ''"> and String_ID_Montserrat = #{stringIdMontserrat}</if>
+            <if test="stringIdOpensans != null  and stringIdOpensans != ''"> and String_ID_OpenSans = #{stringIdOpensans}</if>
+            <if test="stringIdTimesnewroman != null  and stringIdTimesnewroman != ''"> and String_ID_TimesNewRoman = #{stringIdTimesnewroman}</if>
+            <if test="stringIdSourcehansans != null  and stringIdSourcehansans != ''"> and String_ID_SourceHanSans = #{stringIdSourcehansans}</if>
+            <if test="stringIdSourcehanserif != null  and stringIdSourcehanserif != ''"> and String_ID_SourceHanSerif = #{stringIdSourcehanserif}</if>
+            <if test="stringIdYahei != null  and stringIdYahei != ''"> and String_ID_YaHei = #{stringIdYahei}</if>
+            <if test="stringIdSimsun != null  and stringIdSimsun != ''"> and String_ID_SimSun = #{stringIdSimsun}</if>
+            <if test="stringIdFangsong != null  and stringIdFangsong != ''"> and String_ID_FangSong = #{stringIdFangsong}</if>
+            <if test="stringIdSimhei != null  and stringIdSimhei != ''"> and String_ID_SimHei = #{stringIdSimhei}</if>
+            <if test="stringIdKaiti != null  and stringIdKaiti != ''"> and String_ID_KaiTi = #{stringIdKaiti}</if>
+            <if test="stringIdLisu != null  and stringIdLisu != ''"> and String_ID_LiSu = #{stringIdLisu}</if>
+            <if test="stringIdYouyuan != null  and stringIdYouyuan != ''"> and String_ID_YouYuan = #{stringIdYouyuan}</if>
+            <if test="stringIdFoundersimhei != null  and stringIdFoundersimhei != ''"> and String_ID_FounderSimHei = #{stringIdFoundersimhei}</if>
+            <if test="stringIdFoundershusong != null  and stringIdFoundershusong != ''"> and String_ID_FounderShuSong = #{stringIdFoundershusong}</if>
+            <if test="stringIdFounderfangsong != null  and stringIdFounderfangsong != ''"> and String_ID_FounderFangSong = #{stringIdFounderfangsong}</if>
+            <if test="stringIdFounderkaiti != null  and stringIdFounderkaiti != ''"> and String_ID_FounderKaiTi = #{stringIdFounderkaiti}</if>
+            <if test="stringIdSquaredot != null  and stringIdSquaredot != ''"> and String_ID_SquareDot = #{stringIdSquaredot}</if>
+            <if test="stringIdRounddot != null  and stringIdRounddot != ''"> and String_ID_RoundDot = #{stringIdRounddot}</if>
+            <if test="stringIdExternalfont != null  and stringIdExternalfont != ''"> and String_ID_ExternalFont = #{stringIdExternalfont}</if>
+            <if test="stringIdDealerId != null  and stringIdDealerId != ''"> and String_ID_Dealer_ID = #{stringIdDealerId}</if>
+            <if test="stringIdDeviceSn != null  and stringIdDeviceSn != ''"> and String_ID_Device_SN = #{stringIdDeviceSn}</if>
+            <if test="stringIdCapacity != null  and stringIdCapacity != ''"> and String_ID_Capacity = #{stringIdCapacity}</if>
+            <if test="stringIdInkcartridgeabnormal != null  and stringIdInkcartridgeabnormal != ''"> and String_ID_InkCartridgeAbnormal = #{stringIdInkcartridgeabnormal}</if>
+            <if test="stringIdInkcartridgereplace != null  and stringIdInkcartridgereplace != ''"> and String_ID_InkCartridgeReplace = #{stringIdInkcartridgereplace}</if>
+            <if test="stringIdNoinkcartridge != null  and stringIdNoinkcartridge != ''"> and String_ID_NoInkCartridge = #{stringIdNoinkcartridge}</if>
+            <if test="stringIdTips2 != null  and stringIdTips2 != ''"> and String_ID_Tips2 = #{stringIdTips2}</if>
+            <if test="stringIdMarginalarm != null  and stringIdMarginalarm != ''"> and String_ID_MarginAlarm = #{stringIdMarginalarm}</if>
+            <if test="stringIdRest != null  and stringIdRest != ''"> and String_ID_Rest = #{stringIdRest}</if>
+            <if test="stringIdPwd != null  and stringIdPwd != ''"> and String_ID_PWD = #{stringIdPwd}</if>
+            <if test="stringIdInputpwd != null  and stringIdInputpwd != ''"> and String_ID_InputPWD = #{stringIdInputpwd}</if>
+            <if test="stringIdInputnewpwd != null  and stringIdInputnewpwd != ''"> and String_ID_InputNewPWD = #{stringIdInputnewpwd}</if>
+            <if test="stringIdYMirror != null  and stringIdYMirror != ''"> and String_ID_Y_Mirror = #{stringIdYMirror}</if>
+            <if test="stringIdClear != null  and stringIdClear != ''"> and String_ID_Clear = #{stringIdClear}</if>
+            <if test="stringIdPause != null  and stringIdPause != ''"> and String_ID_Pause = #{stringIdPause}</if>
+            <if test="stringIdNetwork != null  and stringIdNetwork != ''"> and String_ID_Network = #{stringIdNetwork}</if>
+            <if test="stringIdLocalip != null  and stringIdLocalip != ''"> and String_ID_LocalIP = #{stringIdLocalip}</if>
+            <if test="stringIdSubnetmask != null  and stringIdSubnetmask != ''"> and String_ID_SubnetMask = #{stringIdSubnetmask}</if>
+            <if test="stringIdDefaultgateway != null  and stringIdDefaultgateway != ''"> and String_ID_DefaultGateway = #{stringIdDefaultgateway}</if>
+            <if test="stringIdServerip != null  and stringIdServerip != ''"> and String_ID_ServerIP = #{stringIdServerip}</if>
+            <if test="stringIdCommandport != null  and stringIdCommandport != ''"> and String_ID_CommandPort = #{stringIdCommandport}</if>
+            <if test="stringIdDataport != null  and stringIdDataport != ''"> and String_ID_DataPort = #{stringIdDataport}</if>
+            <if test="stringIdRepeatprint != null  and stringIdRepeatprint != ''"> and String_ID_RepeatPrint = #{stringIdRepeatprint}</if>
+            <if test="stringIdRepeattimes != null  and stringIdRepeattimes != ''"> and String_ID_RepeatTimes = #{stringIdRepeattimes}</if>
+            <if test="stringIdRepeatdelay != null  and stringIdRepeatdelay != ''"> and String_ID_RepeatDelay = #{stringIdRepeatdelay}</if>
+            <if test="stringIdLock != null  and stringIdLock != ''"> and String_ID_Lock = #{stringIdLock}</if>
+            <if test="stringIdUnlock != null  and stringIdUnlock != ''"> and String_ID_Unlock = #{stringIdUnlock}</if>
+        </where>
+    </select>
+
+    <select id="selectLanguageById" parameterType="String" resultMap="LanguageResult">
+        <include refid="selectLanguageVo"/>
+        where String_ID = #{stringId}
+    </select>
+
+    <insert id="insertLanguage" parameterType="com.zk.chinkjet.entity.Language">
+        insert into zk_language
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="stringId != null  and stringId != ''">String_ID,</if>
+            <if test="stringIdLanguagename != null  and stringIdLanguagename != ''">String_ID_LanguageName,</if>
+            <if test="stringIdY != null  and stringIdY != ''">String_ID_Y,</if>
+            <if test="stringIdN != null  and stringIdN != ''">String_ID_N,</if>
+            <if test="stringIdEscape != null  and stringIdEscape != ''">String_ID_Escape,</if>
+            <if test="stringIdNew != null  and stringIdNew != ''">String_ID_New,</if>
+            <if test="stringIdOpen != null  and stringIdOpen != ''">String_ID_Open,</if>
+            <if test="stringIdRename != null  and stringIdRename != ''">String_ID_Rename,</if>
+            <if test="stringIdSave != null  and stringIdSave != ''">String_ID_Save,</if>
+            <if test="stringIdPrint != null  and stringIdPrint != ''">String_ID_Print,</if>
+            <if test="stringIdAdd != null  and stringIdAdd != ''">String_ID_Add,</if>
+            <if test="stringIdSettings != null  and stringIdSettings != ''">String_ID_Settings,</if>
+            <if test="stringIdShutdown != null  and stringIdShutdown != ''">String_ID_Shutdown,</if>
+            <if test="stringIdEdit != null  and stringIdEdit != ''">String_ID_Edit,</if>
+            <if test="stringIdDelete != null  and stringIdDelete != ''">String_ID_Delete,</if>
+            <if test="stringIdParagraph != null  and stringIdParagraph != ''">String_ID_Paragraph,</if>
+            <if test="stringIdPreview != null  and stringIdPreview != ''">String_ID_Preview,</if>
+            <if test="stringIdStop != null  and stringIdStop != ''">String_ID_Stop,</if>
+            <if test="stringIdPrintsettings != null  and stringIdPrintsettings != ''">String_ID_PrintSettings,</if>
+            <if test="stringIdNozzlesettings != null  and stringIdNozzlesettings != ''">String_ID_NozzleSettings,</if>
+            <if test="stringIdTimesetting != null  and stringIdTimesetting != ''">String_ID_TimeSetting,</if>
+            <if test="stringIdLanguages != null  and stringIdLanguages != ''">String_ID_Languages,</if>
+            <if test="stringIdDataexport != null  and stringIdDataexport != ''">String_ID_DataExport,</if>
+            <if test="stringIdTouchcalibration != null  and stringIdTouchcalibration != ''">String_ID_TouchCalibration,</if>
+            <if test="stringIdRestorefactory != null  and stringIdRestorefactory != ''">String_ID_RestoreFactory,</if>
+            <if test="stringIdTroubleshooting != null  and stringIdTroubleshooting != ''">String_ID_Troubleshooting,</if>
+            <if test="stringIdDigitalcertificate != null  and stringIdDigitalcertificate != ''">String_ID_DigitalCertificate,</if>
+            <if test="stringIdFwupgrade != null  and stringIdFwupgrade != ''">String_ID_FWUpgrade,</if>
+            <if test="stringIdUiupgrade != null  and stringIdUiupgrade != ''">String_ID_UIUpgrade,</if>
+            <if test="stringIdPrintheadtype != null  and stringIdPrintheadtype != ''">String_ID_PrintheadType,</if>
+            <if test="stringIdPrintheadnum != null  and stringIdPrintheadnum != ''">String_ID_PrintheadNum,</if>
+            <if test="stringIdPrintheadlrspace != null  and stringIdPrintheadlrspace != ''">String_ID_PrintheadLRSpace,</if>
+            <if test="stringIdPrintheadudspace != null  and stringIdPrintheadudspace != ''">String_ID_PrintheadUDSpace,</if>
+            <if test="stringIdPrintheadsequence != null  and stringIdPrintheadsequence != ''">String_ID_PrintheadSequence,</if>
+            <if test="stringIdNozzleselect != null  and stringIdNozzleselect != ''">String_ID_NozzleSelect,</if>
+            <if test="stringIdNozzlevoltage != null  and stringIdNozzlevoltage != ''">String_ID_NozzleVoltage,</if>
+            <if test="stringIdNozzlepulsewidth != null  and stringIdNozzlepulsewidth != ''">String_ID_NozzlePulseWidth,</if>
+            <if test="stringIdLightselect != null  and stringIdLightselect != ''">String_ID_LightSelect,</if>
+            <if test="stringIdLeftnozzle != null  and stringIdLeftnozzle != ''">String_ID_LeftNozzle,</if>
+            <if test="stringIdRightnozzle != null  and stringIdRightnozzle != ''">String_ID_RightNozzle,</if>
+            <if test="stringIdIntlight != null  and stringIdIntlight != ''">String_ID_IntLight,</if>
+            <if test="stringIdExtlight != null  and stringIdExtlight != ''">String_ID_ExtLight,</if>
+            <if test="stringIdFlashspraytime != null  and stringIdFlashspraytime != ''">String_ID_FlashSprayTime,</if>
+            <if test="stringIdTbrev != null  and stringIdTbrev != ''">String_ID_TBRev,</if>
+            <if test="stringIdLrrev != null  and stringIdLrrev != ''">String_ID_LRRev,</if>
+            <if test="stringIdStartsignal != null  and stringIdStartsignal != ''">String_ID_StartSignal,</if>
+            <if test="stringIdHand != null  and stringIdHand != ''">String_ID_Hand,</if>
+            <if test="stringIdLight != null  and stringIdLight != ''">String_ID_Light,</if>
+            <if test="stringIdDis != null  and stringIdDis != ''">String_ID_Dis,</if>
+            <if test="stringIdTimerreprint != null  and stringIdTimerreprint != ''">String_ID_TimerRePrint,</if>
+            <if test="stringIdDisinpoints != null  and stringIdDisinpoints != ''">String_ID_DisInPoints,</if>
+            <if test="stringIdSyncmode != null  and stringIdSyncmode != ''">String_ID_SyncMode,</if>
+            <if test="stringIdSyncwordwidth != null  and stringIdSyncwordwidth != ''">String_ID_SyncWordWidth,</if>
+            <if test="stringIdPpr != null  and stringIdPpr != ''">String_ID_PPR,</if>
+            <if test="stringId2r != null  and stringId2r != ''">String_ID_2R,</if>
+            <if test="stringIdLightdelay != null  and stringIdLightdelay != ''">String_ID_LightDelay,</if>
+            <if test="stringIdPrintspeed != null  and stringIdPrintspeed != ''">String_ID_PrintSpeed,</if>
+            <if test="stringIdPrintdarkness != null  and stringIdPrintdarkness != ''">String_ID_PrintDarkness,</if>
+            <if test="stringIdKeybeep != null  and stringIdKeybeep != ''">String_ID_KeyBeep,</if>
+            <if test="stringIdPrintbeep != null  and stringIdPrintbeep != ''">String_ID_PrintBeep,</if>
+            <if test="stringIdPrinttimes != null  and stringIdPrinttimes != ''">String_ID_PrintTimes,</if>
+            <if test="stringIdEncoder != null  and stringIdEncoder != ''">String_ID_Encoder,</if>
+            <if test="stringIdTimer != null  and stringIdTimer != ''">String_ID_Timer,</if>
+            <if test="stringIdText != null  and stringIdText != ''">String_ID_Text,</if>
+            <if test="stringIdDate != null  and stringIdDate != ''">String_ID_Date,</if>
+            <if test="stringIdImage != null  and stringIdImage != ''">String_ID_Image,</if>
+            <if test="stringIdSymbology != null  and stringIdSymbology != ''">String_ID_Symbology,</if>
+            <if test="stringIdVarbarcode != null  and stringIdVarbarcode != ''">String_ID_VarBarcode,</if>
+            <if test="stringIdCounter != null  and stringIdCounter != ''">String_ID_Counter,</if>
+            <if test="stringIdTable != null  and stringIdTable != ''">String_ID_Table,</if>
+            <if test="stringIdIcon != null  and stringIdIcon != ''">String_ID_Icon,</if>
+            <if test="stringIdVariable != null  and stringIdVariable != ''">String_ID_Variable,</if>
+            <if test="stringIdBlank != null  and stringIdBlank != ''">String_ID_Blank,</if>
+            <if test="stringIdLinefeed != null  and stringIdLinefeed != ''">String_ID_LineFeed,</if>
+            <if test="stringIdSymbol != null  and stringIdSymbol != ''">String_ID_Symbol,</if>
+            <if test="stringIdR != null  and stringIdR != ''">String_ID_R,</if>
+            <if test="stringIdD != null  and stringIdD != ''">String_ID_D,</if>
+            <if test="stringIdCare != null  and stringIdCare != ''">String_ID_Care,</if>
+            <if test="stringIdDisablehook != null  and stringIdDisablehook != ''">String_ID_DisableHook,</if>
+            <if test="stringIdWet != null  and stringIdWet != ''">String_ID_Wet,</if>
+            <if test="stringIdUpward != null  and stringIdUpward != ''">String_ID_Upward,</if>
+            <if test="stringIdStackinglayers != null  and stringIdStackinglayers != ''">String_ID_StackingLayers,</if>
+            <if test="stringIdStrprefix != null  and stringIdStrprefix != ''">String_ID_StrPrefix,</if>
+            <if test="stringIdStrsuffix != null  and stringIdStrsuffix != ''">String_ID_StrSuffix,</if>
+            <if test="stringIdSpecialsymbol != null  and stringIdSpecialsymbol != ''">String_ID_SpecialSymbol,</if>
+            <if test="stringIdFontsettings != null  and stringIdFontsettings != ''">String_ID_FontSettings,</if>
+            <if test="stringIdFont != null  and stringIdFont != ''">String_ID_Font,</if>
+            <if test="stringIdFontsize != null  and stringIdFontsize != ''">String_ID_FontSize,</if>
+            <if test="stringIdSpacing != null  and stringIdSpacing != ''">String_ID_Spacing,</if>
+            <if test="stringIdStyle != null  and stringIdStyle != ''">String_ID_Style,</if>
+            <if test="stringIdBold != null  and stringIdBold != ''">String_ID_Bold,</if>
+            <if test="stringIdItalic != null  and stringIdItalic != ''">String_ID_Italic,</if>
+            <if test="stringIdRotate != null  and stringIdRotate != ''">String_ID_Rotate,</if>
+            <if test="stringIdSolid != null  and stringIdSolid != ''">String_ID_Solid,</if>
+            <if test="stringIdRoundlattice != null  and stringIdRoundlattice != ''">String_ID_RoundLattice,</if>
+            <if test="stringIdSquarelattice != null  and stringIdSquarelattice != ''">String_ID_SquareLattice,</if>
+            <if test="stringIdDeletestyle != null  and stringIdDeletestyle != ''">String_ID_DeleteStyle,</if>
+            <if test="stringIdMinvalue != null  and stringIdMinvalue != ''">String_ID_MinValue,</if>
+            <if test="stringIdMaxvalue != null  and stringIdMaxvalue != ''">String_ID_MaxValue,</if>
+            <if test="stringIdHeight != null  and stringIdHeight != ''">String_ID_Height,</if>
+            <if test="stringIdWidth != null  and stringIdWidth != ''">String_ID_Width,</if>
+            <if test="stringIdAttribute != null  and stringIdAttribute != ''">String_ID_Attribute,</if>
+            <if test="stringIdCreationtime != null  and stringIdCreationtime != ''">String_ID_CreationTime,</if>
+            <if test="stringIdSize != null  and stringIdSize != ''">String_ID_Size,</if>
+            <if test="stringIdDecimalsystem != null  and stringIdDecimalsystem != ''">String_ID_DecimalSystem,</if>
+            <if test="stringIdOctal != null  and stringIdOctal != ''">String_ID_Octal,</if>
+            <if test="stringIdDecimal != null  and stringIdDecimal != ''">String_ID_Decimal,</if>
+            <if test="stringIdHexadecimal != null  and stringIdHexadecimal != ''">String_ID_Hexadecimal,</if>
+            <if test="stringIdDigits != null  and stringIdDigits != ''">String_ID_Digits,</if>
+            <if test="stringIdLeadingchar != null  and stringIdLeadingchar != ''">String_ID_LeadingChar,</if>
+            <if test="stringIdInitial != null  and stringIdInitial != ''">String_ID_Initial,</if>
+            <if test="stringIdStepping != null  and stringIdStepping != ''">String_ID_Stepping,</if>
+            <if test="stringIdRepeat != null  and stringIdRepeat != ''">String_ID_Repeat,</if>
+            <if test="stringIdDelay != null  and stringIdDelay != ''">String_ID_Delay,</if>
+            <if test="stringIdYear != null  and stringIdYear != ''">String_ID_Year,</if>
+            <if test="stringIdMonth != null  and stringIdMonth != ''">String_ID_Month,</if>
+            <if test="stringIdDay != null  and stringIdDay != ''">String_ID_Day,</if>
+            <if test="stringIdNewzkmldoc != null  and stringIdNewzkmldoc != ''">String_ID_NewZKMLDoc,</if>
+            <if test="stringIdFile != null  and stringIdFile != ''">String_ID_File,</if>
+            <if test="stringIdLocal != null  and stringIdLocal != ''">String_ID_Local,</if>
+            <if test="stringIdUsb != null  and stringIdUsb != ''">String_ID_USB,</if>
+            <if test="stringIdPrintedtimes != null  and stringIdPrintedtimes != ''">String_ID_PrintedTimes,</if>
+            <if test="stringIdTotalprintedtimes != null  and stringIdTotalprintedtimes != ''">String_ID_TotalPrintedTimes,</if>
+            <if test="stringIdThisprintedtimes != null  and stringIdThisprintedtimes != ''">String_ID_ThisPrintedTimes,</if>
+            <if test="stringIdRemaintimes != null  and stringIdRemaintimes != ''">String_ID_RemainTimes,</if>
+            <if test="stringIdWating != null  and stringIdWating != ''">String_ID_Wating,</if>
+            <if test="stringIdPrinting != null  and stringIdPrinting != ''">String_ID_Printing,</if>
+            <if test="stringIdTips != null  and stringIdTips != ''">String_ID_Tips,</if>
+            <if test="stringIdRestoreinfo != null  and stringIdRestoreinfo != ''">String_ID_RestoreInfo,</if>
+            <if test="stringIdOpenfailed != null  and stringIdOpenfailed != ''">String_ID_OpenFailed,</if>
+            <if test="stringIdSavesuccessed != null  and stringIdSavesuccessed != ''">String_ID_SaveSuccessed,</if>
+            <if test="stringIdSavefailed != null  and stringIdSavefailed != ''">String_ID_SaveFailed,</if>
+            <if test="stringIdNoupgradeWarnning != null  and stringIdNoupgradeWarnning != ''">String_ID_NoUpgrade_Warnning,</if>
+            <if test="stringIdUpgradeok != null  and stringIdUpgradeok != ''">String_ID_UpgradeOK,</if>
+            <if test="stringIdUdiskWarnning != null  and stringIdUdiskWarnning != ''">String_ID_UDisk_Warnning,</if>
+            <if test="stringIdUdiskExport != null  and stringIdUdiskExport != ''">String_ID_UDisk_Export,</if>
+            <if test="stringIdUdiskWriteerror != null  and stringIdUdiskWriteerror != ''">String_ID_UDisk_WriteError,</if>
+            <if test="stringIdUdiskLooking != null  and stringIdUdiskLooking != ''">String_ID_UDisk_Looking,</if>
+            <if test="stringIdSavingFile != null  and stringIdSavingFile != ''">String_ID_Saving_File,</if>
+            <if test="stringIdConfirmdelete != null  and stringIdConfirmdelete != ''">String_ID_ConfirmDelete,</if>
+            <if test="stringIdDeletesuccessed != null  and stringIdDeletesuccessed != ''">String_ID_DeleteSuccessed,</if>
+            <if test="stringIdDeletefailed != null  and stringIdDeletefailed != ''">String_ID_DeleteFailed,</if>
+            <if test="stringIdShutdowninfo != null  and stringIdShutdowninfo != ''">String_ID_ShutdownInfo,</if>
+            <if test="stringIdPoweroffinfo != null  and stringIdPoweroffinfo != ''">String_ID_PowerOffInfo,</if>
+            <if test="stringIdLowbattery != null  and stringIdLowbattery != ''">String_ID_LowBattery,</if>
+            <if test="stringIdWaitamoment != null  and stringIdWaitamoment != ''">String_ID_WaitAMoment,</if>
+            <if test="stringIdCalibri != null  and stringIdCalibri != ''">String_ID_Calibri,</if>
+            <if test="stringIdArial != null  and stringIdArial != ''">String_ID_Arial,</if>
+            <if test="stringIdDroid != null  and stringIdDroid != ''">String_ID_Droid,</if>
+            <if test="stringIdMontserrat != null  and stringIdMontserrat != ''">String_ID_Montserrat,</if>
+            <if test="stringIdOpensans != null  and stringIdOpensans != ''">String_ID_OpenSans,</if>
+            <if test="stringIdTimesnewroman != null  and stringIdTimesnewroman != ''">String_ID_TimesNewRoman,</if>
+            <if test="stringIdSourcehansans != null  and stringIdSourcehansans != ''">String_ID_SourceHanSans,</if>
+            <if test="stringIdSourcehanserif != null  and stringIdSourcehanserif != ''">String_ID_SourceHanSerif,</if>
+            <if test="stringIdYahei != null  and stringIdYahei != ''">String_ID_YaHei,</if>
+            <if test="stringIdSimsun != null  and stringIdSimsun != ''">String_ID_SimSun,</if>
+            <if test="stringIdFangsong != null  and stringIdFangsong != ''">String_ID_FangSong,</if>
+            <if test="stringIdSimhei != null  and stringIdSimhei != ''">String_ID_SimHei,</if>
+            <if test="stringIdKaiti != null  and stringIdKaiti != ''">String_ID_KaiTi,</if>
+            <if test="stringIdLisu != null  and stringIdLisu != ''">String_ID_LiSu,</if>
+            <if test="stringIdYouyuan != null  and stringIdYouyuan != ''">String_ID_YouYuan,</if>
+            <if test="stringIdFoundersimhei != null  and stringIdFoundersimhei != ''">String_ID_FounderSimHei,</if>
+            <if test="stringIdFoundershusong != null  and stringIdFoundershusong != ''">String_ID_FounderShuSong,</if>
+            <if test="stringIdFounderfangsong != null  and stringIdFounderfangsong != ''">String_ID_FounderFangSong,</if>
+            <if test="stringIdFounderkaiti != null  and stringIdFounderkaiti != ''">String_ID_FounderKaiTi,</if>
+            <if test="stringIdSquaredot != null  and stringIdSquaredot != ''">String_ID_SquareDot,</if>
+            <if test="stringIdRounddot != null  and stringIdRounddot != ''">String_ID_RoundDot,</if>
+            <if test="stringIdExternalfont != null  and stringIdExternalfont != ''">String_ID_ExternalFont,</if>
+            <if test="stringIdDealerId != null  and stringIdDealerId != ''">String_ID_Dealer_ID,</if>
+            <if test="stringIdDeviceSn != null  and stringIdDeviceSn != ''">String_ID_Device_SN,</if>
+            <if test="stringIdCapacity != null  and stringIdCapacity != ''">String_ID_Capacity,</if>
+            <if test="stringIdInkcartridgeabnormal != null  and stringIdInkcartridgeabnormal != ''">String_ID_InkCartridgeAbnormal,</if>
+            <if test="stringIdInkcartridgereplace != null  and stringIdInkcartridgereplace != ''">String_ID_InkCartridgeReplace,</if>
+            <if test="stringIdNoinkcartridge != null  and stringIdNoinkcartridge != ''">String_ID_NoInkCartridge,</if>
+            <if test="stringIdTips2 != null  and stringIdTips2 != ''">String_ID_Tips2,</if>
+            <if test="stringIdMarginalarm != null  and stringIdMarginalarm != ''">String_ID_MarginAlarm,</if>
+            <if test="stringIdRest != null  and stringIdRest != ''">String_ID_Rest,</if>
+            <if test="stringIdPwd != null  and stringIdPwd != ''">String_ID_PWD,</if>
+            <if test="stringIdInputpwd != null  and stringIdInputpwd != ''">String_ID_InputPWD,</if>
+            <if test="stringIdInputnewpwd != null  and stringIdInputnewpwd != ''">String_ID_InputNewPWD,</if>
+            <if test="stringIdYMirror != null  and stringIdYMirror != ''">String_ID_Y_Mirror,</if>
+            <if test="stringIdClear != null  and stringIdClear != ''">String_ID_Clear,</if>
+            <if test="stringIdPause != null  and stringIdPause != ''">String_ID_Pause,</if>
+            <if test="stringIdNetwork != null  and stringIdNetwork != ''">String_ID_Network,</if>
+            <if test="stringIdLocalip != null  and stringIdLocalip != ''">String_ID_LocalIP,</if>
+            <if test="stringIdSubnetmask != null  and stringIdSubnetmask != ''">String_ID_SubnetMask,</if>
+            <if test="stringIdDefaultgateway != null  and stringIdDefaultgateway != ''">String_ID_DefaultGateway,</if>
+            <if test="stringIdServerip != null  and stringIdServerip != ''">String_ID_ServerIP,</if>
+            <if test="stringIdCommandport != null  and stringIdCommandport != ''">String_ID_CommandPort,</if>
+            <if test="stringIdDataport != null  and stringIdDataport != ''">String_ID_DataPort,</if>
+            <if test="stringIdRepeatprint != null  and stringIdRepeatprint != ''">String_ID_RepeatPrint,</if>
+            <if test="stringIdRepeattimes != null  and stringIdRepeattimes != ''">String_ID_RepeatTimes,</if>
+            <if test="stringIdRepeatdelay != null  and stringIdRepeatdelay != ''">String_ID_RepeatDelay,</if>
+            <if test="stringIdLock != null  and stringIdLock != ''">String_ID_Lock,</if>
+            <if test="stringIdUnlock != null  and stringIdUnlock != ''">String_ID_Unlock,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="stringId != null  and stringId != ''">#{stringId},</if>
+            <if test="stringIdLanguagename != null  and stringIdLanguagename != ''">#{stringIdLanguagename},</if>
+            <if test="stringIdY != null  and stringIdY != ''">#{stringIdY},</if>
+            <if test="stringIdN != null  and stringIdN != ''">#{stringIdN},</if>
+            <if test="stringIdEscape != null  and stringIdEscape != ''">#{stringIdEscape},</if>
+            <if test="stringIdNew != null  and stringIdNew != ''">#{stringIdNew},</if>
+            <if test="stringIdOpen != null  and stringIdOpen != ''">#{stringIdOpen},</if>
+            <if test="stringIdRename != null  and stringIdRename != ''">#{stringIdRename},</if>
+            <if test="stringIdSave != null  and stringIdSave != ''">#{stringIdSave},</if>
+            <if test="stringIdPrint != null  and stringIdPrint != ''">#{stringIdPrint},</if>
+            <if test="stringIdAdd != null  and stringIdAdd != ''">#{stringIdAdd},</if>
+            <if test="stringIdSettings != null  and stringIdSettings != ''">#{stringIdSettings},</if>
+            <if test="stringIdShutdown != null  and stringIdShutdown != ''">#{stringIdShutdown},</if>
+            <if test="stringIdEdit != null  and stringIdEdit != ''">#{stringIdEdit},</if>
+            <if test="stringIdDelete != null  and stringIdDelete != ''">#{stringIdDelete},</if>
+            <if test="stringIdParagraph != null  and stringIdParagraph != ''">#{stringIdParagraph},</if>
+            <if test="stringIdPreview != null  and stringIdPreview != ''">#{stringIdPreview},</if>
+            <if test="stringIdStop != null  and stringIdStop != ''">#{stringIdStop},</if>
+            <if test="stringIdPrintsettings != null  and stringIdPrintsettings != ''">#{stringIdPrintsettings},</if>
+            <if test="stringIdNozzlesettings != null  and stringIdNozzlesettings != ''">#{stringIdNozzlesettings},</if>
+            <if test="stringIdTimesetting != null  and stringIdTimesetting != ''">#{stringIdTimesetting},</if>
+            <if test="stringIdLanguages != null  and stringIdLanguages != ''">#{stringIdLanguages},</if>
+            <if test="stringIdDataexport != null  and stringIdDataexport != ''">#{stringIdDataexport},</if>
+            <if test="stringIdTouchcalibration != null  and stringIdTouchcalibration != ''">#{stringIdTouchcalibration},</if>
+            <if test="stringIdRestorefactory != null  and stringIdRestorefactory != ''">#{stringIdRestorefactory},</if>
+            <if test="stringIdTroubleshooting != null  and stringIdTroubleshooting != ''">#{stringIdTroubleshooting},</if>
+            <if test="stringIdDigitalcertificate != null  and stringIdDigitalcertificate != ''">#{stringIdDigitalcertificate},</if>
+            <if test="stringIdFwupgrade != null  and stringIdFwupgrade != ''">#{stringIdFwupgrade},</if>
+            <if test="stringIdUiupgrade != null  and stringIdUiupgrade != ''">#{stringIdUiupgrade},</if>
+            <if test="stringIdPrintheadtype != null  and stringIdPrintheadtype != ''">#{stringIdPrintheadtype},</if>
+            <if test="stringIdPrintheadnum != null  and stringIdPrintheadnum != ''">#{stringIdPrintheadnum},</if>
+            <if test="stringIdPrintheadlrspace != null  and stringIdPrintheadlrspace != ''">#{stringIdPrintheadlrspace},</if>
+            <if test="stringIdPrintheadudspace != null  and stringIdPrintheadudspace != ''">#{stringIdPrintheadudspace},</if>
+            <if test="stringIdPrintheadsequence != null  and stringIdPrintheadsequence != ''">#{stringIdPrintheadsequence},</if>
+            <if test="stringIdNozzleselect != null  and stringIdNozzleselect != ''">#{stringIdNozzleselect},</if>
+            <if test="stringIdNozzlevoltage != null  and stringIdNozzlevoltage != ''">#{stringIdNozzlevoltage},</if>
+            <if test="stringIdNozzlepulsewidth != null  and stringIdNozzlepulsewidth != ''">#{stringIdNozzlepulsewidth},</if>
+            <if test="stringIdLightselect != null  and stringIdLightselect != ''">#{stringIdLightselect},</if>
+            <if test="stringIdLeftnozzle != null  and stringIdLeftnozzle != ''">#{stringIdLeftnozzle},</if>
+            <if test="stringIdRightnozzle != null  and stringIdRightnozzle != ''">#{stringIdRightnozzle},</if>
+            <if test="stringIdIntlight != null  and stringIdIntlight != ''">#{stringIdIntlight},</if>
+            <if test="stringIdExtlight != null  and stringIdExtlight != ''">#{stringIdExtlight},</if>
+            <if test="stringIdFlashspraytime != null  and stringIdFlashspraytime != ''">#{stringIdFlashspraytime},</if>
+            <if test="stringIdTbrev != null  and stringIdTbrev != ''">#{stringIdTbrev},</if>
+            <if test="stringIdLrrev != null  and stringIdLrrev != ''">#{stringIdLrrev},</if>
+            <if test="stringIdStartsignal != null  and stringIdStartsignal != ''">#{stringIdStartsignal},</if>
+            <if test="stringIdHand != null  and stringIdHand != ''">#{stringIdHand},</if>
+            <if test="stringIdLight != null  and stringIdLight != ''">#{stringIdLight},</if>
+            <if test="stringIdDis != null  and stringIdDis != ''">#{stringIdDis},</if>
+            <if test="stringIdTimerreprint != null  and stringIdTimerreprint != ''">#{stringIdTimerreprint},</if>
+            <if test="stringIdDisinpoints != null  and stringIdDisinpoints != ''">#{stringIdDisinpoints},</if>
+            <if test="stringIdSyncmode != null  and stringIdSyncmode != ''">#{stringIdSyncmode},</if>
+            <if test="stringIdSyncwordwidth != null  and stringIdSyncwordwidth != ''">#{stringIdSyncwordwidth},</if>
+            <if test="stringIdPpr != null  and stringIdPpr != ''">#{stringIdPpr},</if>
+            <if test="stringId2r != null  and stringId2r != ''">#{stringId2r},</if>
+            <if test="stringIdLightdelay != null  and stringIdLightdelay != ''">#{stringIdLightdelay},</if>
+            <if test="stringIdPrintspeed != null  and stringIdPrintspeed != ''">#{stringIdPrintspeed},</if>
+            <if test="stringIdPrintdarkness != null  and stringIdPrintdarkness != ''">#{stringIdPrintdarkness},</if>
+            <if test="stringIdKeybeep != null  and stringIdKeybeep != ''">#{stringIdKeybeep},</if>
+            <if test="stringIdPrintbeep != null  and stringIdPrintbeep != ''">#{stringIdPrintbeep},</if>
+            <if test="stringIdPrinttimes != null  and stringIdPrinttimes != ''">#{stringIdPrinttimes},</if>
+            <if test="stringIdEncoder != null  and stringIdEncoder != ''">#{stringIdEncoder},</if>
+            <if test="stringIdTimer != null  and stringIdTimer != ''">#{stringIdTimer},</if>
+            <if test="stringIdText != null  and stringIdText != ''">#{stringIdText},</if>
+            <if test="stringIdDate != null  and stringIdDate != ''">#{stringIdDate},</if>
+            <if test="stringIdImage != null  and stringIdImage != ''">#{stringIdImage},</if>
+            <if test="stringIdSymbology != null  and stringIdSymbology != ''">#{stringIdSymbology},</if>
+            <if test="stringIdVarbarcode != null  and stringIdVarbarcode != ''">#{stringIdVarbarcode},</if>
+            <if test="stringIdCounter != null  and stringIdCounter != ''">#{stringIdCounter},</if>
+            <if test="stringIdTable != null  and stringIdTable != ''">#{stringIdTable},</if>
+            <if test="stringIdIcon != null  and stringIdIcon != ''">#{stringIdIcon},</if>
+            <if test="stringIdVariable != null  and stringIdVariable != ''">#{stringIdVariable},</if>
+            <if test="stringIdBlank != null  and stringIdBlank != ''">#{stringIdBlank},</if>
+            <if test="stringIdLinefeed != null  and stringIdLinefeed != ''">#{stringIdLinefeed},</if>
+            <if test="stringIdSymbol != null  and stringIdSymbol != ''">#{stringIdSymbol},</if>
+            <if test="stringIdR != null  and stringIdR != ''">#{stringIdR},</if>
+            <if test="stringIdD != null  and stringIdD != ''">#{stringIdD},</if>
+            <if test="stringIdCare != null  and stringIdCare != ''">#{stringIdCare},</if>
+            <if test="stringIdDisablehook != null  and stringIdDisablehook != ''">#{stringIdDisablehook},</if>
+            <if test="stringIdWet != null  and stringIdWet != ''">#{stringIdWet},</if>
+            <if test="stringIdUpward != null  and stringIdUpward != ''">#{stringIdUpward},</if>
+            <if test="stringIdStackinglayers != null  and stringIdStackinglayers != ''">#{stringIdStackinglayers},</if>
+            <if test="stringIdStrprefix != null  and stringIdStrprefix != ''">#{stringIdStrprefix},</if>
+            <if test="stringIdStrsuffix != null  and stringIdStrsuffix != ''">#{stringIdStrsuffix},</if>
+            <if test="stringIdSpecialsymbol != null  and stringIdSpecialsymbol != ''">#{stringIdSpecialsymbol},</if>
+            <if test="stringIdFontsettings != null  and stringIdFontsettings != ''">#{stringIdFontsettings},</if>
+            <if test="stringIdFont != null  and stringIdFont != ''">#{stringIdFont},</if>
+            <if test="stringIdFontsize != null  and stringIdFontsize != ''">#{stringIdFontsize},</if>
+            <if test="stringIdSpacing != null  and stringIdSpacing != ''">#{stringIdSpacing},</if>
+            <if test="stringIdStyle != null  and stringIdStyle != ''">#{stringIdStyle},</if>
+            <if test="stringIdBold != null  and stringIdBold != ''">#{stringIdBold},</if>
+            <if test="stringIdItalic != null  and stringIdItalic != ''">#{stringIdItalic},</if>
+            <if test="stringIdRotate != null  and stringIdRotate != ''">#{stringIdRotate},</if>
+            <if test="stringIdSolid != null  and stringIdSolid != ''">#{stringIdSolid},</if>
+            <if test="stringIdRoundlattice != null  and stringIdRoundlattice != ''">#{stringIdRoundlattice},</if>
+            <if test="stringIdSquarelattice != null  and stringIdSquarelattice != ''">#{stringIdSquarelattice},</if>
+            <if test="stringIdDeletestyle != null  and stringIdDeletestyle != ''">#{stringIdDeletestyle},</if>
+            <if test="stringIdMinvalue != null  and stringIdMinvalue != ''">#{stringIdMinvalue},</if>
+            <if test="stringIdMaxvalue != null  and stringIdMaxvalue != ''">#{stringIdMaxvalue},</if>
+            <if test="stringIdHeight != null  and stringIdHeight != ''">#{stringIdHeight},</if>
+            <if test="stringIdWidth != null  and stringIdWidth != ''">#{stringIdWidth},</if>
+            <if test="stringIdAttribute != null  and stringIdAttribute != ''">#{stringIdAttribute},</if>
+            <if test="stringIdCreationtime != null  and stringIdCreationtime != ''">#{stringIdCreationtime},</if>
+            <if test="stringIdSize != null  and stringIdSize != ''">#{stringIdSize},</if>
+            <if test="stringIdDecimalsystem != null  and stringIdDecimalsystem != ''">#{stringIdDecimalsystem},</if>
+            <if test="stringIdOctal != null  and stringIdOctal != ''">#{stringIdOctal},</if>
+            <if test="stringIdDecimal != null  and stringIdDecimal != ''">#{stringIdDecimal},</if>
+            <if test="stringIdHexadecimal != null  and stringIdHexadecimal != ''">#{stringIdHexadecimal},</if>
+            <if test="stringIdDigits != null  and stringIdDigits != ''">#{stringIdDigits},</if>
+            <if test="stringIdLeadingchar != null  and stringIdLeadingchar != ''">#{stringIdLeadingchar},</if>
+            <if test="stringIdInitial != null  and stringIdInitial != ''">#{stringIdInitial},</if>
+            <if test="stringIdStepping != null  and stringIdStepping != ''">#{stringIdStepping},</if>
+            <if test="stringIdRepeat != null  and stringIdRepeat != ''">#{stringIdRepeat},</if>
+            <if test="stringIdDelay != null  and stringIdDelay != ''">#{stringIdDelay},</if>
+            <if test="stringIdYear != null  and stringIdYear != ''">#{stringIdYear},</if>
+            <if test="stringIdMonth != null  and stringIdMonth != ''">#{stringIdMonth},</if>
+            <if test="stringIdDay != null  and stringIdDay != ''">#{stringIdDay},</if>
+            <if test="stringIdNewzkmldoc != null  and stringIdNewzkmldoc != ''">#{stringIdNewzkmldoc},</if>
+            <if test="stringIdFile != null  and stringIdFile != ''">#{stringIdFile},</if>
+            <if test="stringIdLocal != null  and stringIdLocal != ''">#{stringIdLocal},</if>
+            <if test="stringIdUsb != null  and stringIdUsb != ''">#{stringIdUsb},</if>
+            <if test="stringIdPrintedtimes != null  and stringIdPrintedtimes != ''">#{stringIdPrintedtimes},</if>
+            <if test="stringIdTotalprintedtimes != null  and stringIdTotalprintedtimes != ''">#{stringIdTotalprintedtimes},</if>
+            <if test="stringIdThisprintedtimes != null  and stringIdThisprintedtimes != ''">#{stringIdThisprintedtimes},</if>
+            <if test="stringIdRemaintimes != null  and stringIdRemaintimes != ''">#{stringIdRemaintimes},</if>
+            <if test="stringIdWating != null  and stringIdWating != ''">#{stringIdWating},</if>
+            <if test="stringIdPrinting != null  and stringIdPrinting != ''">#{stringIdPrinting},</if>
+            <if test="stringIdTips != null  and stringIdTips != ''">#{stringIdTips},</if>
+            <if test="stringIdRestoreinfo != null  and stringIdRestoreinfo != ''">#{stringIdRestoreinfo},</if>
+            <if test="stringIdOpenfailed != null  and stringIdOpenfailed != ''">#{stringIdOpenfailed},</if>
+            <if test="stringIdSavesuccessed != null  and stringIdSavesuccessed != ''">#{stringIdSavesuccessed},</if>
+            <if test="stringIdSavefailed != null  and stringIdSavefailed != ''">#{stringIdSavefailed},</if>
+            <if test="stringIdNoupgradeWarnning != null  and stringIdNoupgradeWarnning != ''">#{stringIdNoupgradeWarnning},</if>
+            <if test="stringIdUpgradeok != null  and stringIdUpgradeok != ''">#{stringIdUpgradeok},</if>
+            <if test="stringIdUdiskWarnning != null  and stringIdUdiskWarnning != ''">#{stringIdUdiskWarnning},</if>
+            <if test="stringIdUdiskExport != null  and stringIdUdiskExport != ''">#{stringIdUdiskExport},</if>
+            <if test="stringIdUdiskWriteerror != null  and stringIdUdiskWriteerror != ''">#{stringIdUdiskWriteerror},</if>
+            <if test="stringIdUdiskLooking != null  and stringIdUdiskLooking != ''">#{stringIdUdiskLooking},</if>
+            <if test="stringIdSavingFile != null  and stringIdSavingFile != ''">#{stringIdSavingFile},</if>
+            <if test="stringIdConfirmdelete != null  and stringIdConfirmdelete != ''">#{stringIdConfirmdelete},</if>
+            <if test="stringIdDeletesuccessed != null  and stringIdDeletesuccessed != ''">#{stringIdDeletesuccessed},</if>
+            <if test="stringIdDeletefailed != null  and stringIdDeletefailed != ''">#{stringIdDeletefailed},</if>
+            <if test="stringIdShutdowninfo != null  and stringIdShutdowninfo != ''">#{stringIdShutdowninfo},</if>
+            <if test="stringIdPoweroffinfo != null  and stringIdPoweroffinfo != ''">#{stringIdPoweroffinfo},</if>
+            <if test="stringIdLowbattery != null  and stringIdLowbattery != ''">#{stringIdLowbattery},</if>
+            <if test="stringIdWaitamoment != null  and stringIdWaitamoment != ''">#{stringIdWaitamoment},</if>
+            <if test="stringIdCalibri != null  and stringIdCalibri != ''">#{stringIdCalibri},</if>
+            <if test="stringIdArial != null  and stringIdArial != ''">#{stringIdArial},</if>
+            <if test="stringIdDroid != null  and stringIdDroid != ''">#{stringIdDroid},</if>
+            <if test="stringIdMontserrat != null  and stringIdMontserrat != ''">#{stringIdMontserrat},</if>
+            <if test="stringIdOpensans != null  and stringIdOpensans != ''">#{stringIdOpensans},</if>
+            <if test="stringIdTimesnewroman != null  and stringIdTimesnewroman != ''">#{stringIdTimesnewroman},</if>
+            <if test="stringIdSourcehansans != null  and stringIdSourcehansans != ''">#{stringIdSourcehansans},</if>
+            <if test="stringIdSourcehanserif != null  and stringIdSourcehanserif != ''">#{stringIdSourcehanserif},</if>
+            <if test="stringIdYahei != null  and stringIdYahei != ''">#{stringIdYahei},</if>
+            <if test="stringIdSimsun != null  and stringIdSimsun != ''">#{stringIdSimsun},</if>
+            <if test="stringIdFangsong != null  and stringIdFangsong != ''">#{stringIdFangsong},</if>
+            <if test="stringIdSimhei != null  and stringIdSimhei != ''">#{stringIdSimhei},</if>
+            <if test="stringIdKaiti != null  and stringIdKaiti != ''">#{stringIdKaiti},</if>
+            <if test="stringIdLisu != null  and stringIdLisu != ''">#{stringIdLisu},</if>
+            <if test="stringIdYouyuan != null  and stringIdYouyuan != ''">#{stringIdYouyuan},</if>
+            <if test="stringIdFoundersimhei != null  and stringIdFoundersimhei != ''">#{stringIdFoundersimhei},</if>
+            <if test="stringIdFoundershusong != null  and stringIdFoundershusong != ''">#{stringIdFoundershusong},</if>
+            <if test="stringIdFounderfangsong != null  and stringIdFounderfangsong != ''">#{stringIdFounderfangsong},</if>
+            <if test="stringIdFounderkaiti != null  and stringIdFounderkaiti != ''">#{stringIdFounderkaiti},</if>
+            <if test="stringIdSquaredot != null  and stringIdSquaredot != ''">#{stringIdSquaredot},</if>
+            <if test="stringIdRounddot != null  and stringIdRounddot != ''">#{stringIdRounddot},</if>
+            <if test="stringIdExternalfont != null  and stringIdExternalfont != ''">#{stringIdExternalfont},</if>
+            <if test="stringIdDealerId != null  and stringIdDealerId != ''">#{stringIdDealerId},</if>
+            <if test="stringIdDeviceSn != null  and stringIdDeviceSn != ''">#{stringIdDeviceSn},</if>
+            <if test="stringIdCapacity != null  and stringIdCapacity != ''">#{stringIdCapacity},</if>
+            <if test="stringIdInkcartridgeabnormal != null  and stringIdInkcartridgeabnormal != ''">#{stringIdInkcartridgeabnormal},</if>
+            <if test="stringIdInkcartridgereplace != null  and stringIdInkcartridgereplace != ''">#{stringIdInkcartridgereplace},</if>
+            <if test="stringIdNoinkcartridge != null  and stringIdNoinkcartridge != ''">#{stringIdNoinkcartridge},</if>
+            <if test="stringIdTips2 != null  and stringIdTips2 != ''">#{stringIdTips2},</if>
+            <if test="stringIdMarginalarm != null  and stringIdMarginalarm != ''">#{stringIdMarginalarm},</if>
+            <if test="stringIdRest != null  and stringIdRest != ''">#{stringIdRest},</if>
+            <if test="stringIdPwd != null  and stringIdPwd != ''">#{stringIdPwd},</if>
+            <if test="stringIdInputpwd != null  and stringIdInputpwd != ''">#{stringIdInputpwd},</if>
+            <if test="stringIdInputnewpwd != null  and stringIdInputnewpwd != ''">#{stringIdInputnewpwd},</if>
+            <if test="stringIdYMirror != null  and stringIdYMirror != ''">#{stringIdYMirror},</if>
+            <if test="stringIdClear != null  and stringIdClear != ''">#{stringIdClear},</if>
+            <if test="stringIdPause != null  and stringIdPause != ''">#{stringIdPause},</if>
+            <if test="stringIdNetwork != null  and stringIdNetwork != ''">#{stringIdNetwork},</if>
+            <if test="stringIdLocalip != null  and stringIdLocalip != ''">#{stringIdLocalip},</if>
+            <if test="stringIdSubnetmask != null  and stringIdSubnetmask != ''">#{stringIdSubnetmask},</if>
+            <if test="stringIdDefaultgateway != null  and stringIdDefaultgateway != ''">#{stringIdDefaultgateway},</if>
+            <if test="stringIdServerip != null  and stringIdServerip != ''">#{stringIdServerip},</if>
+            <if test="stringIdCommandport != null  and stringIdCommandport != ''">#{stringIdCommandport},</if>
+            <if test="stringIdDataport != null  and stringIdDataport != ''">#{stringIdDataport},</if>
+            <if test="stringIdRepeatprint != null  and stringIdRepeatprint != ''">#{stringIdRepeatprint},</if>
+            <if test="stringIdRepeattimes != null  and stringIdRepeattimes != ''">#{stringIdRepeattimes},</if>
+            <if test="stringIdRepeatdelay != null  and stringIdRepeatdelay != ''">#{stringIdRepeatdelay},</if>
+            <if test="stringIdLock != null  and stringIdLock != ''">#{stringIdLock},</if>
+            <if test="stringIdUnlock != null  and stringIdUnlock != ''">#{stringIdUnlock},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLanguage" parameterType="com.zk.chinkjet.entity.Language">
+        update zk_language
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="stringIdLanguagename != null  and stringIdLanguagename != ''">String_ID_LanguageName = #{stringIdLanguagename},</if>
+            <if test="stringIdY != null  and stringIdY != ''">String_ID_Y = #{stringIdY},</if>
+            <if test="stringIdN != null  and stringIdN != ''">String_ID_N = #{stringIdN},</if>
+            <if test="stringIdEscape != null  and stringIdEscape != ''">String_ID_Escape = #{stringIdEscape},</if>
+            <if test="stringIdNew != null  and stringIdNew != ''">String_ID_New = #{stringIdNew},</if>
+            <if test="stringIdOpen != null  and stringIdOpen != ''">String_ID_Open = #{stringIdOpen},</if>
+            <if test="stringIdRename != null  and stringIdRename != ''">String_ID_Rename = #{stringIdRename},</if>
+            <if test="stringIdSave != null  and stringIdSave != ''">String_ID_Save = #{stringIdSave},</if>
+            <if test="stringIdPrint != null  and stringIdPrint != ''">String_ID_Print = #{stringIdPrint},</if>
+            <if test="stringIdAdd != null  and stringIdAdd != ''">String_ID_Add = #{stringIdAdd},</if>
+            <if test="stringIdSettings != null  and stringIdSettings != ''">String_ID_Settings = #{stringIdSettings},</if>
+            <if test="stringIdShutdown != null  and stringIdShutdown != ''">String_ID_Shutdown = #{stringIdShutdown},</if>
+            <if test="stringIdEdit != null  and stringIdEdit != ''">String_ID_Edit = #{stringIdEdit},</if>
+            <if test="stringIdDelete != null  and stringIdDelete != ''">String_ID_Delete = #{stringIdDelete},</if>
+            <if test="stringIdParagraph != null  and stringIdParagraph != ''">String_ID_Paragraph = #{stringIdParagraph},</if>
+            <if test="stringIdPreview != null  and stringIdPreview != ''">String_ID_Preview = #{stringIdPreview},</if>
+            <if test="stringIdStop != null  and stringIdStop != ''">String_ID_Stop = #{stringIdStop},</if>
+            <if test="stringIdPrintsettings != null  and stringIdPrintsettings != ''">String_ID_PrintSettings = #{stringIdPrintsettings},</if>
+            <if test="stringIdNozzlesettings != null  and stringIdNozzlesettings != ''">String_ID_NozzleSettings = #{stringIdNozzlesettings},</if>
+            <if test="stringIdTimesetting != null  and stringIdTimesetting != ''">String_ID_TimeSetting = #{stringIdTimesetting},</if>
+            <if test="stringIdLanguages != null  and stringIdLanguages != ''">String_ID_Languages = #{stringIdLanguages},</if>
+            <if test="stringIdDataexport != null  and stringIdDataexport != ''">String_ID_DataExport = #{stringIdDataexport},</if>
+            <if test="stringIdTouchcalibration != null  and stringIdTouchcalibration != ''">String_ID_TouchCalibration = #{stringIdTouchcalibration},</if>
+            <if test="stringIdRestorefactory != null  and stringIdRestorefactory != ''">String_ID_RestoreFactory = #{stringIdRestorefactory},</if>
+            <if test="stringIdTroubleshooting != null  and stringIdTroubleshooting != ''">String_ID_Troubleshooting = #{stringIdTroubleshooting},</if>
+            <if test="stringIdDigitalcertificate != null  and stringIdDigitalcertificate != ''">String_ID_DigitalCertificate = #{stringIdDigitalcertificate},</if>
+            <if test="stringIdFwupgrade != null  and stringIdFwupgrade != ''">String_ID_FWUpgrade = #{stringIdFwupgrade},</if>
+            <if test="stringIdUiupgrade != null  and stringIdUiupgrade != ''">String_ID_UIUpgrade = #{stringIdUiupgrade},</if>
+            <if test="stringIdPrintheadtype != null  and stringIdPrintheadtype != ''">String_ID_PrintheadType = #{stringIdPrintheadtype},</if>
+            <if test="stringIdPrintheadnum != null  and stringIdPrintheadnum != ''">String_ID_PrintheadNum = #{stringIdPrintheadnum},</if>
+            <if test="stringIdPrintheadlrspace != null  and stringIdPrintheadlrspace != ''">String_ID_PrintheadLRSpace = #{stringIdPrintheadlrspace},</if>
+            <if test="stringIdPrintheadudspace != null  and stringIdPrintheadudspace != ''">String_ID_PrintheadUDSpace = #{stringIdPrintheadudspace},</if>
+            <if test="stringIdPrintheadsequence != null  and stringIdPrintheadsequence != ''">String_ID_PrintheadSequence = #{stringIdPrintheadsequence},</if>
+            <if test="stringIdNozzleselect != null  and stringIdNozzleselect != ''">String_ID_NozzleSelect = #{stringIdNozzleselect},</if>
+            <if test="stringIdNozzlevoltage != null  and stringIdNozzlevoltage != ''">String_ID_NozzleVoltage = #{stringIdNozzlevoltage},</if>
+            <if test="stringIdNozzlepulsewidth != null  and stringIdNozzlepulsewidth != ''">String_ID_NozzlePulseWidth = #{stringIdNozzlepulsewidth},</if>
+            <if test="stringIdLightselect != null  and stringIdLightselect != ''">String_ID_LightSelect = #{stringIdLightselect},</if>
+            <if test="stringIdLeftnozzle != null  and stringIdLeftnozzle != ''">String_ID_LeftNozzle = #{stringIdLeftnozzle},</if>
+            <if test="stringIdRightnozzle != null  and stringIdRightnozzle != ''">String_ID_RightNozzle = #{stringIdRightnozzle},</if>
+            <if test="stringIdIntlight != null  and stringIdIntlight != ''">String_ID_IntLight = #{stringIdIntlight},</if>
+            <if test="stringIdExtlight != null  and stringIdExtlight != ''">String_ID_ExtLight = #{stringIdExtlight},</if>
+            <if test="stringIdFlashspraytime != null  and stringIdFlashspraytime != ''">String_ID_FlashSprayTime = #{stringIdFlashspraytime},</if>
+            <if test="stringIdTbrev != null  and stringIdTbrev != ''">String_ID_TBRev = #{stringIdTbrev},</if>
+            <if test="stringIdLrrev != null  and stringIdLrrev != ''">String_ID_LRRev = #{stringIdLrrev},</if>
+            <if test="stringIdStartsignal != null  and stringIdStartsignal != ''">String_ID_StartSignal = #{stringIdStartsignal},</if>
+            <if test="stringIdHand != null  and stringIdHand != ''">String_ID_Hand = #{stringIdHand},</if>
+            <if test="stringIdLight != null  and stringIdLight != ''">String_ID_Light = #{stringIdLight},</if>
+            <if test="stringIdDis != null  and stringIdDis != ''">String_ID_Dis = #{stringIdDis},</if>
+            <if test="stringIdTimerreprint != null  and stringIdTimerreprint != ''">String_ID_TimerRePrint = #{stringIdTimerreprint},</if>
+            <if test="stringIdDisinpoints != null  and stringIdDisinpoints != ''">String_ID_DisInPoints = #{stringIdDisinpoints},</if>
+            <if test="stringIdSyncmode != null  and stringIdSyncmode != ''">String_ID_SyncMode = #{stringIdSyncmode},</if>
+            <if test="stringIdSyncwordwidth != null  and stringIdSyncwordwidth != ''">String_ID_SyncWordWidth = #{stringIdSyncwordwidth},</if>
+            <if test="stringIdPpr != null  and stringIdPpr != ''">String_ID_PPR = #{stringIdPpr},</if>
+            <if test="stringId2r != null  and stringId2r != ''">String_ID_2R = #{stringId2r},</if>
+            <if test="stringIdLightdelay != null  and stringIdLightdelay != ''">String_ID_LightDelay = #{stringIdLightdelay},</if>
+            <if test="stringIdPrintspeed != null  and stringIdPrintspeed != ''">String_ID_PrintSpeed = #{stringIdPrintspeed},</if>
+            <if test="stringIdPrintdarkness != null  and stringIdPrintdarkness != ''">String_ID_PrintDarkness = #{stringIdPrintdarkness},</if>
+            <if test="stringIdKeybeep != null  and stringIdKeybeep != ''">String_ID_KeyBeep = #{stringIdKeybeep},</if>
+            <if test="stringIdPrintbeep != null  and stringIdPrintbeep != ''">String_ID_PrintBeep = #{stringIdPrintbeep},</if>
+            <if test="stringIdPrinttimes != null  and stringIdPrinttimes != ''">String_ID_PrintTimes = #{stringIdPrinttimes},</if>
+            <if test="stringIdEncoder != null  and stringIdEncoder != ''">String_ID_Encoder = #{stringIdEncoder},</if>
+            <if test="stringIdTimer != null  and stringIdTimer != ''">String_ID_Timer = #{stringIdTimer},</if>
+            <if test="stringIdText != null  and stringIdText != ''">String_ID_Text = #{stringIdText},</if>
+            <if test="stringIdDate != null  and stringIdDate != ''">String_ID_Date = #{stringIdDate},</if>
+            <if test="stringIdImage != null  and stringIdImage != ''">String_ID_Image = #{stringIdImage},</if>
+            <if test="stringIdSymbology != null  and stringIdSymbology != ''">String_ID_Symbology = #{stringIdSymbology},</if>
+            <if test="stringIdVarbarcode != null  and stringIdVarbarcode != ''">String_ID_VarBarcode = #{stringIdVarbarcode},</if>
+            <if test="stringIdCounter != null  and stringIdCounter != ''">String_ID_Counter = #{stringIdCounter},</if>
+            <if test="stringIdTable != null  and stringIdTable != ''">String_ID_Table = #{stringIdTable},</if>
+            <if test="stringIdIcon != null  and stringIdIcon != ''">String_ID_Icon = #{stringIdIcon},</if>
+            <if test="stringIdVariable != null  and stringIdVariable != ''">String_ID_Variable = #{stringIdVariable},</if>
+            <if test="stringIdBlank != null  and stringIdBlank != ''">String_ID_Blank = #{stringIdBlank},</if>
+            <if test="stringIdLinefeed != null  and stringIdLinefeed != ''">String_ID_LineFeed = #{stringIdLinefeed},</if>
+            <if test="stringIdSymbol != null  and stringIdSymbol != ''">String_ID_Symbol = #{stringIdSymbol},</if>
+            <if test="stringIdR != null  and stringIdR != ''">String_ID_R = #{stringIdR},</if>
+            <if test="stringIdD != null  and stringIdD != ''">String_ID_D = #{stringIdD},</if>
+            <if test="stringIdCare != null  and stringIdCare != ''">String_ID_Care = #{stringIdCare},</if>
+            <if test="stringIdDisablehook != null  and stringIdDisablehook != ''">String_ID_DisableHook = #{stringIdDisablehook},</if>
+            <if test="stringIdWet != null  and stringIdWet != ''">String_ID_Wet = #{stringIdWet},</if>
+            <if test="stringIdUpward != null  and stringIdUpward != ''">String_ID_Upward = #{stringIdUpward},</if>
+            <if test="stringIdStackinglayers != null  and stringIdStackinglayers != ''">String_ID_StackingLayers = #{stringIdStackinglayers},</if>
+            <if test="stringIdStrprefix != null  and stringIdStrprefix != ''">String_ID_StrPrefix = #{stringIdStrprefix},</if>
+            <if test="stringIdStrsuffix != null  and stringIdStrsuffix != ''">String_ID_StrSuffix = #{stringIdStrsuffix},</if>
+            <if test="stringIdSpecialsymbol != null  and stringIdSpecialsymbol != ''">String_ID_SpecialSymbol = #{stringIdSpecialsymbol},</if>
+            <if test="stringIdFontsettings != null  and stringIdFontsettings != ''">String_ID_FontSettings = #{stringIdFontsettings},</if>
+            <if test="stringIdFont != null  and stringIdFont != ''">String_ID_Font = #{stringIdFont},</if>
+            <if test="stringIdFontsize != null  and stringIdFontsize != ''">String_ID_FontSize = #{stringIdFontsize},</if>
+            <if test="stringIdSpacing != null  and stringIdSpacing != ''">String_ID_Spacing = #{stringIdSpacing},</if>
+            <if test="stringIdStyle != null  and stringIdStyle != ''">String_ID_Style = #{stringIdStyle},</if>
+            <if test="stringIdBold != null  and stringIdBold != ''">String_ID_Bold = #{stringIdBold},</if>
+            <if test="stringIdItalic != null  and stringIdItalic != ''">String_ID_Italic = #{stringIdItalic},</if>
+            <if test="stringIdRotate != null  and stringIdRotate != ''">String_ID_Rotate = #{stringIdRotate},</if>
+            <if test="stringIdSolid != null  and stringIdSolid != ''">String_ID_Solid = #{stringIdSolid},</if>
+            <if test="stringIdRoundlattice != null  and stringIdRoundlattice != ''">String_ID_RoundLattice = #{stringIdRoundlattice},</if>
+            <if test="stringIdSquarelattice != null  and stringIdSquarelattice != ''">String_ID_SquareLattice = #{stringIdSquarelattice},</if>
+            <if test="stringIdDeletestyle != null  and stringIdDeletestyle != ''">String_ID_DeleteStyle = #{stringIdDeletestyle},</if>
+            <if test="stringIdMinvalue != null  and stringIdMinvalue != ''">String_ID_MinValue = #{stringIdMinvalue},</if>
+            <if test="stringIdMaxvalue != null  and stringIdMaxvalue != ''">String_ID_MaxValue = #{stringIdMaxvalue},</if>
+            <if test="stringIdHeight != null  and stringIdHeight != ''">String_ID_Height = #{stringIdHeight},</if>
+            <if test="stringIdWidth != null  and stringIdWidth != ''">String_ID_Width = #{stringIdWidth},</if>
+            <if test="stringIdAttribute != null  and stringIdAttribute != ''">String_ID_Attribute = #{stringIdAttribute},</if>
+            <if test="stringIdCreationtime != null  and stringIdCreationtime != ''">String_ID_CreationTime = #{stringIdCreationtime},</if>
+            <if test="stringIdSize != null  and stringIdSize != ''">String_ID_Size = #{stringIdSize},</if>
+            <if test="stringIdDecimalsystem != null  and stringIdDecimalsystem != ''">String_ID_DecimalSystem = #{stringIdDecimalsystem},</if>
+            <if test="stringIdOctal != null  and stringIdOctal != ''">String_ID_Octal = #{stringIdOctal},</if>
+            <if test="stringIdDecimal != null  and stringIdDecimal != ''">String_ID_Decimal = #{stringIdDecimal},</if>
+            <if test="stringIdHexadecimal != null  and stringIdHexadecimal != ''">String_ID_Hexadecimal = #{stringIdHexadecimal},</if>
+            <if test="stringIdDigits != null  and stringIdDigits != ''">String_ID_Digits = #{stringIdDigits},</if>
+            <if test="stringIdLeadingchar != null  and stringIdLeadingchar != ''">String_ID_LeadingChar = #{stringIdLeadingchar},</if>
+            <if test="stringIdInitial != null  and stringIdInitial != ''">String_ID_Initial = #{stringIdInitial},</if>
+            <if test="stringIdStepping != null  and stringIdStepping != ''">String_ID_Stepping = #{stringIdStepping},</if>
+            <if test="stringIdRepeat != null  and stringIdRepeat != ''">String_ID_Repeat = #{stringIdRepeat},</if>
+            <if test="stringIdDelay != null  and stringIdDelay != ''">String_ID_Delay = #{stringIdDelay},</if>
+            <if test="stringIdYear != null  and stringIdYear != ''">String_ID_Year = #{stringIdYear},</if>
+            <if test="stringIdMonth != null  and stringIdMonth != ''">String_ID_Month = #{stringIdMonth},</if>
+            <if test="stringIdDay != null  and stringIdDay != ''">String_ID_Day = #{stringIdDay},</if>
+            <if test="stringIdNewzkmldoc != null  and stringIdNewzkmldoc != ''">String_ID_NewZKMLDoc = #{stringIdNewzkmldoc},</if>
+            <if test="stringIdFile != null  and stringIdFile != ''">String_ID_File = #{stringIdFile},</if>
+            <if test="stringIdLocal != null  and stringIdLocal != ''">String_ID_Local = #{stringIdLocal},</if>
+            <if test="stringIdUsb != null  and stringIdUsb != ''">String_ID_USB = #{stringIdUsb},</if>
+            <if test="stringIdPrintedtimes != null  and stringIdPrintedtimes != ''">String_ID_PrintedTimes = #{stringIdPrintedtimes},</if>
+            <if test="stringIdTotalprintedtimes != null  and stringIdTotalprintedtimes != ''">String_ID_TotalPrintedTimes = #{stringIdTotalprintedtimes},</if>
+            <if test="stringIdThisprintedtimes != null  and stringIdThisprintedtimes != ''">String_ID_ThisPrintedTimes = #{stringIdThisprintedtimes},</if>
+            <if test="stringIdRemaintimes != null  and stringIdRemaintimes != ''">String_ID_RemainTimes = #{stringIdRemaintimes},</if>
+            <if test="stringIdWating != null  and stringIdWating != ''">String_ID_Wating = #{stringIdWating},</if>
+            <if test="stringIdPrinting != null  and stringIdPrinting != ''">String_ID_Printing = #{stringIdPrinting},</if>
+            <if test="stringIdTips != null  and stringIdTips != ''">String_ID_Tips = #{stringIdTips},</if>
+            <if test="stringIdRestoreinfo != null  and stringIdRestoreinfo != ''">String_ID_RestoreInfo = #{stringIdRestoreinfo},</if>
+            <if test="stringIdOpenfailed != null  and stringIdOpenfailed != ''">String_ID_OpenFailed = #{stringIdOpenfailed},</if>
+            <if test="stringIdSavesuccessed != null  and stringIdSavesuccessed != ''">String_ID_SaveSuccessed = #{stringIdSavesuccessed},</if>
+            <if test="stringIdSavefailed != null  and stringIdSavefailed != ''">String_ID_SaveFailed = #{stringIdSavefailed},</if>
+            <if test="stringIdNoupgradeWarnning != null  and stringIdNoupgradeWarnning != ''">String_ID_NoUpgrade_Warnning = #{stringIdNoupgradeWarnning},</if>
+            <if test="stringIdUpgradeok != null  and stringIdUpgradeok != ''">String_ID_UpgradeOK = #{stringIdUpgradeok},</if>
+            <if test="stringIdUdiskWarnning != null  and stringIdUdiskWarnning != ''">String_ID_UDisk_Warnning = #{stringIdUdiskWarnning},</if>
+            <if test="stringIdUdiskExport != null  and stringIdUdiskExport != ''">String_ID_UDisk_Export = #{stringIdUdiskExport},</if>
+            <if test="stringIdUdiskWriteerror != null  and stringIdUdiskWriteerror != ''">String_ID_UDisk_WriteError = #{stringIdUdiskWriteerror},</if>
+            <if test="stringIdUdiskLooking != null  and stringIdUdiskLooking != ''">String_ID_UDisk_Looking = #{stringIdUdiskLooking},</if>
+            <if test="stringIdSavingFile != null  and stringIdSavingFile != ''">String_ID_Saving_File = #{stringIdSavingFile},</if>
+            <if test="stringIdConfirmdelete != null  and stringIdConfirmdelete != ''">String_ID_ConfirmDelete = #{stringIdConfirmdelete},</if>
+            <if test="stringIdDeletesuccessed != null  and stringIdDeletesuccessed != ''">String_ID_DeleteSuccessed = #{stringIdDeletesuccessed},</if>
+            <if test="stringIdDeletefailed != null  and stringIdDeletefailed != ''">String_ID_DeleteFailed = #{stringIdDeletefailed},</if>
+            <if test="stringIdShutdowninfo != null  and stringIdShutdowninfo != ''">String_ID_ShutdownInfo = #{stringIdShutdowninfo},</if>
+            <if test="stringIdPoweroffinfo != null  and stringIdPoweroffinfo != ''">String_ID_PowerOffInfo = #{stringIdPoweroffinfo},</if>
+            <if test="stringIdLowbattery != null  and stringIdLowbattery != ''">String_ID_LowBattery = #{stringIdLowbattery},</if>
+            <if test="stringIdWaitamoment != null  and stringIdWaitamoment != ''">String_ID_WaitAMoment = #{stringIdWaitamoment},</if>
+            <if test="stringIdCalibri != null  and stringIdCalibri != ''">String_ID_Calibri = #{stringIdCalibri},</if>
+            <if test="stringIdArial != null  and stringIdArial != ''">String_ID_Arial = #{stringIdArial},</if>
+            <if test="stringIdDroid != null  and stringIdDroid != ''">String_ID_Droid = #{stringIdDroid},</if>
+            <if test="stringIdMontserrat != null  and stringIdMontserrat != ''">String_ID_Montserrat = #{stringIdMontserrat},</if>
+            <if test="stringIdOpensans != null  and stringIdOpensans != ''">String_ID_OpenSans = #{stringIdOpensans},</if>
+            <if test="stringIdTimesnewroman != null  and stringIdTimesnewroman != ''">String_ID_TimesNewRoman = #{stringIdTimesnewroman},</if>
+            <if test="stringIdSourcehansans != null  and stringIdSourcehansans != ''">String_ID_SourceHanSans = #{stringIdSourcehansans},</if>
+            <if test="stringIdSourcehanserif != null  and stringIdSourcehanserif != ''">String_ID_SourceHanSerif = #{stringIdSourcehanserif},</if>
+            <if test="stringIdYahei != null  and stringIdYahei != ''">String_ID_YaHei = #{stringIdYahei},</if>
+            <if test="stringIdSimsun != null  and stringIdSimsun != ''">String_ID_SimSun = #{stringIdSimsun},</if>
+            <if test="stringIdFangsong != null  and stringIdFangsong != ''">String_ID_FangSong = #{stringIdFangsong},</if>
+            <if test="stringIdSimhei != null  and stringIdSimhei != ''">String_ID_SimHei = #{stringIdSimhei},</if>
+            <if test="stringIdKaiti != null  and stringIdKaiti != ''">String_ID_KaiTi = #{stringIdKaiti},</if>
+            <if test="stringIdLisu != null  and stringIdLisu != ''">String_ID_LiSu = #{stringIdLisu},</if>
+            <if test="stringIdYouyuan != null  and stringIdYouyuan != ''">String_ID_YouYuan = #{stringIdYouyuan},</if>
+            <if test="stringIdFoundersimhei != null  and stringIdFoundersimhei != ''">String_ID_FounderSimHei = #{stringIdFoundersimhei},</if>
+            <if test="stringIdFoundershusong != null  and stringIdFoundershusong != ''">String_ID_FounderShuSong = #{stringIdFoundershusong},</if>
+            <if test="stringIdFounderfangsong != null  and stringIdFounderfangsong != ''">String_ID_FounderFangSong = #{stringIdFounderfangsong},</if>
+            <if test="stringIdFounderkaiti != null  and stringIdFounderkaiti != ''">String_ID_FounderKaiTi = #{stringIdFounderkaiti},</if>
+            <if test="stringIdSquaredot != null  and stringIdSquaredot != ''">String_ID_SquareDot = #{stringIdSquaredot},</if>
+            <if test="stringIdRounddot != null  and stringIdRounddot != ''">String_ID_RoundDot = #{stringIdRounddot},</if>
+            <if test="stringIdExternalfont != null  and stringIdExternalfont != ''">String_ID_ExternalFont = #{stringIdExternalfont},</if>
+            <if test="stringIdDealerId != null  and stringIdDealerId != ''">String_ID_Dealer_ID = #{stringIdDealerId},</if>
+            <if test="stringIdDeviceSn != null  and stringIdDeviceSn != ''">String_ID_Device_SN = #{stringIdDeviceSn},</if>
+            <if test="stringIdCapacity != null  and stringIdCapacity != ''">String_ID_Capacity = #{stringIdCapacity},</if>
+            <if test="stringIdInkcartridgeabnormal != null  and stringIdInkcartridgeabnormal != ''">String_ID_InkCartridgeAbnormal = #{stringIdInkcartridgeabnormal},</if>
+            <if test="stringIdInkcartridgereplace != null  and stringIdInkcartridgereplace != ''">String_ID_InkCartridgeReplace = #{stringIdInkcartridgereplace},</if>
+            <if test="stringIdNoinkcartridge != null  and stringIdNoinkcartridge != ''">String_ID_NoInkCartridge = #{stringIdNoinkcartridge},</if>
+            <if test="stringIdTips2 != null  and stringIdTips2 != ''">String_ID_Tips2 = #{stringIdTips2},</if>
+            <if test="stringIdMarginalarm != null  and stringIdMarginalarm != ''">String_ID_MarginAlarm = #{stringIdMarginalarm},</if>
+            <if test="stringIdRest != null  and stringIdRest != ''">String_ID_Rest = #{stringIdRest},</if>
+            <if test="stringIdPwd != null  and stringIdPwd != ''">String_ID_PWD = #{stringIdPwd},</if>
+            <if test="stringIdInputpwd != null  and stringIdInputpwd != ''">String_ID_InputPWD = #{stringIdInputpwd},</if>
+            <if test="stringIdInputnewpwd != null  and stringIdInputnewpwd != ''">String_ID_InputNewPWD = #{stringIdInputnewpwd},</if>
+            <if test="stringIdYMirror != null  and stringIdYMirror != ''">String_ID_Y_Mirror = #{stringIdYMirror},</if>
+            <if test="stringIdClear != null  and stringIdClear != ''">String_ID_Clear = #{stringIdClear},</if>
+            <if test="stringIdPause != null  and stringIdPause != ''">String_ID_Pause = #{stringIdPause},</if>
+            <if test="stringIdNetwork != null  and stringIdNetwork != ''">String_ID_Network = #{stringIdNetwork},</if>
+            <if test="stringIdLocalip != null  and stringIdLocalip != ''">String_ID_LocalIP = #{stringIdLocalip},</if>
+            <if test="stringIdSubnetmask != null  and stringIdSubnetmask != ''">String_ID_SubnetMask = #{stringIdSubnetmask},</if>
+            <if test="stringIdDefaultgateway != null  and stringIdDefaultgateway != ''">String_ID_DefaultGateway = #{stringIdDefaultgateway},</if>
+            <if test="stringIdServerip != null  and stringIdServerip != ''">String_ID_ServerIP = #{stringIdServerip},</if>
+            <if test="stringIdCommandport != null  and stringIdCommandport != ''">String_ID_CommandPort = #{stringIdCommandport},</if>
+            <if test="stringIdDataport != null  and stringIdDataport != ''">String_ID_DataPort = #{stringIdDataport},</if>
+            <if test="stringIdRepeatprint != null  and stringIdRepeatprint != ''">String_ID_RepeatPrint = #{stringIdRepeatprint},</if>
+            <if test="stringIdRepeattimes != null  and stringIdRepeattimes != ''">String_ID_RepeatTimes = #{stringIdRepeattimes},</if>
+            <if test="stringIdRepeatdelay != null  and stringIdRepeatdelay != ''">String_ID_RepeatDelay = #{stringIdRepeatdelay},</if>
+            <if test="stringIdLock != null  and stringIdLock != ''">String_ID_Lock = #{stringIdLock},</if>
+            <if test="stringIdUnlock != null  and stringIdUnlock != ''">String_ID_Unlock = #{stringIdUnlock},</if>
+        </trim>
+        where String_ID = #{stringId}
+    </update>
+
+    <delete id="deleteLanguageById" parameterType="String">
+        delete from zk_language where String_ID = #{stringId}
+    </delete>
+
+    <delete id="deleteLanguageByIds" parameterType="String">
+        delete from zk_language where String_ID in
+        <foreach item="stringId" collection="array" open="(" separator="," close=")">
+            #{stringId}
+        </foreach>
+    </delete>
+
+</mapper>
