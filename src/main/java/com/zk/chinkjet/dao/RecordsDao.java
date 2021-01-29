@@ -1,5 +1,6 @@
 package com.zk.chinkjet.dao;
 
+import com.zk.chinkjet.entity.JetCounter;
 import com.zk.chinkjet.entity.Records;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +18,12 @@ public interface RecordsDao {
 
     int insertRecords(Records records);
 
+    int insertJetCounter(List<JetCounter> jetCounters);
+
     int updataRecords(Records records);
 
     int delRecords(String rId);
+
+    int delJetCounter(List<JetCounter> jetCounters);
+
 }

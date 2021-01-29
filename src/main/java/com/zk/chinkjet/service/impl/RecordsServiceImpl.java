@@ -6,9 +6,12 @@ import com.zk.chinkjet.entity.Records;
 import com.zk.chinkjet.service.RecordsService;
 import com.zk.chinkjet.util.Tool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
@@ -43,14 +46,34 @@ public class RecordsServiceImpl implements RecordsService {
 
     @Override
     public int updataRecords(Records records) {
-
-
-
-
-
-
-
-        return recordsDao.updataRecords(records);
+        List<JetCounter> delJet = new ArrayList<>();
+        List<JetCounter> insertJet = new ArrayList<>();
+        List<JetCounter> updataJet = new ArrayList<>();
+        for (JetCounter jetCounter : records.getJetCounters()) {
+            JetCounter j = jetCounter;
+            if(j.getDelType()){
+                j.setrId(records.getzId());
+                delJet.add(j);
+            }else if(null == j.getzId()||"".equals(j.getzId())) {
+                j.setzId(Tool.CreateID());
+                j.setrId(records.getzId());
+                insertJet.add(j);
+            }else {
+                updataJet.add(j);
+            }
+        }
+        int r = 0;
+        if (insertJet.size()>0){
+            recordsDao.insertJetCounter(insertJet);
+        }
+        if (delJet.size() > 0) {
+            recordsDao.delJetCounter(delJet);
+        }
+        if(updataJet.size()>0){
+            records.setJetCounters(updataJet);
+            r = recordsDao.updataRecords(records);
+        }
+        return r;
     }
 
     @Override

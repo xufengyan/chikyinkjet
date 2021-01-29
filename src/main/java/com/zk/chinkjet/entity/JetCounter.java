@@ -64,6 +64,16 @@ public class JetCounter {
 
     private Integer postponeVal;
 
+    private Boolean delType = false;
+
+    public Boolean getDelType() {
+        return delType;
+    }
+
+    public void setDelType(Boolean delType) {
+        this.delType = delType;
+    }
+
     public int getTypeface() {
         return typeface;
     }

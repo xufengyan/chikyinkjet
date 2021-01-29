@@ -232,6 +232,87 @@
             </if>
     </insert>
 
+    <insert id="insertJetCounter" parameterType="com.zk.chinkjet.entity.JetCounter">
+
+        <foreach collection="list" item="item" index="index">
+            <if test="item.dragType == 'text' or item.dragType == 'date' or  item.dragType == 'excel'">
+                insert into zk_text(z_id,r_id,text_val,x,y,style,rotate,scale,font_size,letter_spacing,font_weight,font_style,drag_type,mode,date_format,original_date,postpone,postpone_val,excel_arr,typeface)
+                values (#{item.zId},#{item.rId},#{item.textVal},#{item.x},#{item.y},#{item.style},#{item.rotate},#{item.scale},#{item.fontSize},#{item.letterSpacing},#{item.fontWeight},#{item.fontStyle},#{item.dragType},#{item.mode},#{item.dateFormat},#{item.originalDate},#{item.postpone},#{item.postponeVal},#{item.excelArr},#{item.typeface});
+            </if>
+            <if test="item.dragType == 'counterNum'">
+                insert into
+                zk_counter_num(z_id,
+                r_id,
+                text_val,
+                x,
+                y,
+                style,
+                rotate,
+                scale,
+                font_size,
+                letter_spacing,
+                font_weight,
+                font_style,
+                drag_type,
+                system,
+                width,
+                init_val,
+                progress,
+                min_val,
+                max_val,
+                repetition,
+                high_order,
+                typeface
+                )
+                values (#{item.zId},#{item.rId},#{item.textVal},#{item.x},#{item.y},#{item.style},#{item.rotate},#{item.scale},
+                #{item.fontSize},#{item.letterSpacing},#{item.fontWeight},#{item.fontStyle},#{item.dragType}
+                ,#{item.setCounterNum.system},#{item.setCounterNum.width},#{item.setCounterNum.initVal},
+                #{item.setCounterNum.progress},#{item.setCounterNum.minVal},#{item.setCounterNum.maxVal}
+                ,#{item.setCounterNum.repetition},#{item.setCounterNum.highOrder},#{item.typeface});
+            </if>
+            <if test="item.dragType == 'image'">
+                insert into
+                zk_image(
+                z_id,
+                r_id,
+                x,
+                y,
+                image_src,
+                width,
+                height,
+                file_id,
+                origin_width,
+                origin_height)
+                values (#{item.zId},#{item.rId},#{item.x},#{item.y},#{item.imageSrc},#{item.imgStyle.width},#{item.imgStyle.height},#{item.imgStyle.fileId},#{item.originWidth},#{item.originHtight});
+            </if>
+            <if test="item.dragType == 'QRCode' or item.dragType == 'VariableQRCode'">
+                insert into
+                zk_qrcode(z_id,
+                r_id,
+                x,
+                y,
+                drag_type,
+                image_src,
+                QC_text,
+                QRCode_type,
+                QC_text_type,
+                QC_width,
+                QC_height,
+                file_id,
+                set_variableQRCode)
+                values (#{item.zId},#{item.rId},#{item.x},#{item.y},#{item.dragType},#{item.imageSrc},
+                #{item.setQRCode.QCText},#{item.setQRCode.QRCodeType},#{item.setQRCode.QCTextType},#{item.setQRCode.QCWidth}
+                ,#{item.setQRCode.QCHeight},#{item.setQRCode.fileId},#{item.setQRCode.setVariableQRCode});
+            </if>
+        </foreach>
+
+
+
+    </insert>
+
+
+
+
     <update id="updataRecords" parameterType="com.zk.chinkjet.entity.Records">
        update zk_records
        <trim prefix="SET" suffixOverrides=",">
@@ -296,7 +377,7 @@
                     <trim prefix="SET" suffixOverrides=",">
                         <if test="item.x != null ">x = #{item.x},</if>
                         <if test="item.y != null ">y = #{item.y},</if>
-                        <if test="item.imgSrc != null  and item.imgSrc != ''">img_src = #{item.imgSrc},</if>
+                        <if test="item.imageSrc != null  and item.imageSrc != ''">image_src = #{item.imageSrc},</if>
                         <if test="item.imgStyle.width != null and item.imgStyle.width != ''">width = #{item.imgStyle.width},</if>
                         <if test="item.imgStyle.height != null and item.imgStyle.height != ''">height = #{item.imgStyle.height},</if>
                         <if test="item.originWidth != null  and item.originWidth != ''">origin_width = #{item.originWidth},</if>
@@ -329,12 +410,30 @@
 
 
     </update>
-    <delete id="delRecords">
+
+    <delete id="delRecords" >
         delete zk_records where z_id = #{rId} ;
         delete zk_text where r_id = #{rId} ;
         delete zk_counter_num where r_id = #{rId} ;
         delete zk_image where r_id = #{rId} ;
         delete zk_qrcode where r_id = #{rId} ;
+    </delete>
+
+    <delete id="delJetCounter" parameterType="com.zk.chinkjet.entity.JetCounter">
+        <foreach collection="list" item="item" index="index">
+            <if test="item.dragType == 'text' or item.dragType == 'date' or  item.dragType == 'excel'">
+                delete from zk_text where r_id = #{item.rId} and z_id = #{item.zId};
+            </if>
+            <if test="item.dragType == 'counterNum'">
+                delete from zk_counter_num where r_id = #{item.rId} and z_id = #{item.zId};
+            </if>
+            <if test="item.dragType == 'image'">
+                delete from zk_image where r_id = #{item.rId} and z_id = #{item.zId};
+            </if>
+            <if test="item.dragType == 'QRCode' or item.dragType == 'VariableQRCode'">
+                delete from zk_qrcode where r_id = #{item.rId} and z_id = #{item.zId};
+            </if>
+        </foreach>
     </delete>
 <!--    <select id="selectZkFileById" resultType="com.zk.chinkmap.entity.ZkFile" parameterType="string">-->
 <!--         select t.*  from zk_file t where t.zid=#{zid}-->

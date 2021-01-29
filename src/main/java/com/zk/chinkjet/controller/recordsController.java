@@ -76,7 +76,7 @@ public class recordsController {
      * @param recordsStr
      * @param rName
      */
-    @RequestMapping("updateRecords")
+    @RequestMapping(value = "updateRecords",method = RequestMethod.POST)
     @ResponseBody
     public Result updateRecords(String recordsStr,String rName,String zId){
         List<JetCounter> JetCounters = JSON.parseArray(recordsStr,JetCounter.class);
