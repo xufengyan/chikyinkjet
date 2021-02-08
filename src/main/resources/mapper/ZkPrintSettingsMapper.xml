@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zk.chinkjet.dao.PrintSettingsDao">
+
+    <resultMap type="com.zk.chinkjet.entity.PrintSettings" id="ZkPrintSettingsResult">
+        <result property="zId"    column="z_id"    />
+        <result property="uId"    column="u_id"    />
+        <result property="keyBeep"    column="key_beep"    />
+        <result property="printBeep"    column="print_beep"    />
+        <result property="tbrev"    column="tbrev"    />
+        <result property="lrrev"    column="lrrev"    />
+        <result property="syncMode"    column="sync_mode"    />
+        <result property="syncModeIndex"    column="sync_mode_index"    />
+        <result property="syncWordWidth"    column="sync_word_width"    />
+        <result property="startSignal"    column="start_signal"    />
+        <result property="startSignalIndex"    column="start_signal_index"    />
+        <result property="printTimes"    column="print_times"    />
+        <result property="repeatPrint"    column="repeat_print"    />
+        <result property="repeatTimes"    column="repeat_times"    />
+        <result property="repeatDelay"    column="repeat_delay"    />
+    </resultMap>
+
+    <sql id="selectZkPrintSettingsVo">
+        select z_id, u_id, key_beep, print_beep, tbrev, lrrev, sync_mode, sync_mode_index, sync_word_width, start_signal, start_signal_index, print_times, repeat_print, repeat_times, repeat_delay from zk_print_settings
+    </sql>
+
+    <select id="selectZkPrintSettingsList" parameterType="com.zk.chinkjet.entity.PrintSettings" resultMap="ZkPrintSettingsResult">
+        <include refid="selectZkPrintSettingsVo"/>
+        <where>
+            <if test="uId != null  and uId != ''"> and u_id = #{uId}</if>
+            <if test="keyBeep != null "> and key_beep = #{keyBeep}</if>
+            <if test="printBeep != null "> and print_beep = #{printBeep}</if>
+            <if test="tbrev != null "> and tbrev = #{tbrev}</if>
+            <if test="lrrev != null "> and lrrev = #{lrrev}</if>
+            <if test="syncMode != null  and syncMode != ''"> and sync_mode = #{syncMode}</if>
+            <if test="syncModeIndex != null "> and sync_mode_index = #{syncModeIndex}</if>
+            <if test="syncWordWidth != null "> and sync_word_width = #{syncWordWidth}</if>
+            <if test="startSignal != null  and startSignal != ''"> and start_signal = #{startSignal}</if>
+            <if test="startSignalIndex != null "> and start_signal_index = #{startSignalIndex}</if>
+            <if test="printTimes != null "> and print_times = #{printTimes}</if>
+            <if test="repeatPrint != null "> and repeat_print = #{repeatPrint}</if>
+            <if test="repeatTimes != null "> and repeat_times = #{repeatTimes}</if>
+            <if test="repeatDelay != null  and repeatDelay != ''"> and repeat_delay = #{repeatDelay}</if>
+        </where>
+    </select>
+
+    <select id="selectZkPrintSettingsById" parameterType="String" resultMap="ZkPrintSettingsResult">
+        <include refid="selectZkPrintSettingsVo"/>
+        where z_id = #{zId}
+    </select>
+
+    <insert id="insertZkPrintSettings" parameterType="com.zk.chinkjet.entity.PrintSettings">
+        insert into zk_print_settings
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="zId != null  and zId != ''">z_id,</if>
+            <if test="uId != null  and uId != ''">u_id,</if>
+            <if test="keyBeep != null ">key_beep,</if>
+            <if test="printBeep != null ">print_beep,</if>
+            <if test="tbrev != null ">tbrev,</if>
+            <if test="lrrev != null ">lrrev,</if>
+            <if test="syncMode != null  and syncMode != ''">sync_mode,</if>
+            <if test="syncModeIndex != null ">sync_mode_index,</if>
+            <if test="syncWordWidth != null ">sync_word_width,</if>
+            <if test="startSignal != null  and startSignal != ''">start_signal,</if>
+            <if test="startSignalIndex != null ">start_signal_index,</if>
+            <if test="printTimes != null ">print_times,</if>
+            <if test="repeatPrint != null ">repeat_print,</if>
+            <if test="repeatTimes != null ">repeat_times,</if>
+            <if test="repeatDelay != null  and repeatDelay != ''">repeat_delay,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="zId != null  and zId != ''">#{zId},</if>
+            <if test="uId != null  and uId != ''">#{uId},</if>
+            <if test="keyBeep != null ">#{keyBeep},</if>
+            <if test="printBeep != null ">#{printBeep},</if>
+            <if test="tbrev != null ">#{tbrev},</if>
+            <if test="lrrev != null ">#{lrrev},</if>
+            <if test="syncMode != null  and syncMode != ''">#{syncMode},</if>
+            <if test="syncModeIndex != null ">#{syncModeIndex},</if>
+            <if test="syncWordWidth != null ">#{syncWordWidth},</if>
+            <if test="startSignal != null  and startSignal != ''">#{startSignal},</if>
+            <if test="startSignalIndex != null ">#{startSignalIndex},</if>
+            <if test="printTimes != null ">#{printTimes},</if>
+            <if test="repeatPrint != null ">#{repeatPrint},</if>
+            <if test="repeatTimes != null ">#{repeatTimes},</if>
+            <if test="repeatDelay != null  and repeatDelay != ''">#{repeatDelay},</if>
+         </trim>
+    </insert>
+
+    <update id="updateZkPrintSettings" parameterType="com.zk.chinkjet.entity.PrintSettings">
+        update zk_print_settings
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="uId != null  and uId != ''">u_id = #{uId},</if>
+            <if test="keyBeep != null ">key_beep = #{keyBeep},</if>
+            <if test="printBeep != null ">print_beep = #{printBeep},</if>
+            <if test="tbrev != null ">tbrev = #{tbrev},</if>
+            <if test="lrrev != null ">lrrev = #{lrrev},</if>
+            <if test="syncMode != null  and syncMode != ''">sync_mode = #{syncMode},</if>
+            <if test="syncModeIndex != null ">sync_mode_index = #{syncModeIndex},</if>
+            <if test="syncWordWidth != null ">sync_word_width = #{syncWordWidth},</if>
+            <if test="startSignal != null  and startSignal != ''">start_signal = #{startSignal},</if>
+            <if test="startSignalIndex != null ">start_signal_index = #{startSignalIndex},</if>
+            <if test="printTimes != null ">print_times = #{printTimes},</if>
+            <if test="repeatPrint != null ">repeat_print = #{repeatPrint},</if>
+            <if test="repeatTimes != null ">repeat_times = #{repeatTimes},</if>
+            <if test="repeatDelay != null  and repeatDelay != ''">repeat_delay = #{repeatDelay},</if>
+        </trim>
+        where z_id = #{zId}
+    </update>
+
+    <delete id="deleteZkPrintSettingsById" parameterType="String">
+        delete from zk_print_settings where z_id = #{zId}
+    </delete>
+
+    <delete id="deleteZkPrintSettingsByIds" parameterType="String">
+        delete from zk_print_settings where z_id in
+        <foreach item="zId" collection="array" open="(" separator="," close=")">
+            #{zId}
+        </foreach>
+    </delete>
+
+</mapper>

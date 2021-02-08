@@ -479,6 +479,10 @@ public class Language
 
     /** $column.columnComment */
 
+    private String stringIdHour;
+
+    /** $column.columnComment */
+
     private String stringIdNewzkmldoc;
 
     /** $column.columnComment */
@@ -1845,6 +1849,14 @@ public class Language
     public void setStringIdNewzkmldoc(String stringIdNewzkmldoc)
     {
         this.stringIdNewzkmldoc = stringIdNewzkmldoc;
+    }
+
+    public String getStringIdHour() {
+        return stringIdHour;
+    }
+
+    public void setStringIdHour(String stringIdHour) {
+        this.stringIdHour = stringIdHour;
     }
 
     public String getStringIdNewzkmldoc()

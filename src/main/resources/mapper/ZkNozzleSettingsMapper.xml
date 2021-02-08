@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zk.chinkjet.dao.NozzleSettingDao">
+
+    <resultMap type="com.zk.chinkjet.entity.NozzleSettings" id="ZkNozzleSettingsResult">
+        <result property="zId"    column="z_id"    />
+        <result property="uId"    column="u_id"    />
+        <result property="nozzleVoltage"    column="nozzle_voltage"    />
+        <result property="flashsprayTime"    column="flashspray_time"    />
+        <result property="printDarkness"    column="print_darkness"    />
+        <result property="dpi"    column="dpi"    />
+    </resultMap>
+
+    <sql id="selectZkNozzleSettingsVo">
+        select z_id, u_id, nozzle_voltage, flashspray_time, print_darkness, dpi from zk_nozzle_settings
+    </sql>
+
+    <select id="selectZkNozzleSettingsList" parameterType="com.zk.chinkjet.entity.NozzleSettings" resultMap="ZkNozzleSettingsResult">
+        <include refid="selectZkNozzleSettingsVo"/>
+        <where>
+            <if test="uId != null  and uId != ''"> and u_id = #{uId}</if>
+            <if test="nozzleVoltage != null  and nozzleVoltage != ''"> and nozzle_voltage = #{nozzleVoltage}</if>
+            <if test="flashsprayTime != null  and flashsprayTime != ''"> and flashspray_time = #{flashsprayTime}</if>
+            <if test="printDarkness != null "> and print_darkness = #{printDarkness}</if>
+            <if test="dpi != null "> and dpi = #{dpi}</if>
+        </where>
+    </select>
+
+    <select id="selectZkNozzleSettingsById" parameterType="String" resultMap="ZkNozzleSettingsResult">
+        <include refid="selectZkNozzleSettingsVo"/>
+        where z_id = #{zId}
+    </select>
+
+    <insert id="insertZkNozzleSettings" parameterType="com.zk.chinkjet.entity.NozzleSettings">
+        insert into zk_nozzle_settings
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="zId != null  and zId != ''">z_id,</if>
+            <if test="uId != null  and uId != ''">u_id,</if>
+            <if test="nozzleVoltage != null  and nozzleVoltage != ''">nozzle_voltage,</if>
+            <if test="flashsprayTime != null  and flashsprayTime != ''">flashspray_time,</if>
+            <if test="printDarkness != null ">print_darkness,</if>
+            <if test="dpi != null ">dpi,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="zId != null  and zId != ''">#{zId},</if>
+            <if test="uId != null  and uId != ''">#{uId},</if>
+            <if test="nozzleVoltage != null  and nozzleVoltage != ''">#{nozzleVoltage},</if>
+            <if test="flashsprayTime != null  and flashsprayTime != ''">#{flashsprayTime},</if>
+            <if test="printDarkness != null ">#{printDarkness},</if>
+            <if test="dpi != null ">#{dpi},</if>
+         </trim>
+    </insert>
+
+    <update id="updateZkNozzleSettings" parameterType="com.zk.chinkjet.entity.NozzleSettings">
+        update zk_nozzle_settings
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="uId != null  and uId != ''">u_id = #{uId},</if>
+            <if test="nozzleVoltage != null  and nozzleVoltage != ''">nozzle_voltage = #{nozzleVoltage},</if>
+            <if test="flashsprayTime != null  and flashsprayTime != ''">flashspray_time = #{flashsprayTime},</if>
+            <if test="printDarkness != null ">print_darkness = #{printDarkness},</if>
+            <if test="dpi != null ">dpi = #{dpi},</if>
+        </trim>
+        where z_id = #{zId}
+    </update>
+
+    <delete id="deleteZkNozzleSettingsById" parameterType="String">
+        delete from zk_nozzle_settings where z_id = #{zId}
+    </delete>
+
+    <delete id="deleteZkNozzleSettingsByIds" parameterType="String">
+        delete from zk_nozzle_settings where z_id in
+        <foreach item="zId" collection="array" open="(" separator="," close=")">
+            #{zId}
+        </foreach>
+    </delete>
+
+</mapper>
